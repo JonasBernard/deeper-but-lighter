@@ -26,4 +26,4 @@ func _process(delta):
 		return
 	var velocity = dist.normalized() * current_speed * delta
 	position += velocity
-	
+
