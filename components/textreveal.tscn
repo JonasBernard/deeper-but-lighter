@@ -13,7 +13,10 @@ default_font = SubResource( 1 )
 script = ExtResource( 1 )
 
 [node name="FontSource" type="RichTextLabel" parent="."]
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource( 2 )
+text = "AAAAAAAAAAAAAAAAAAAAAAA"
 __meta__ = {
 "_edit_use_anchors_": false
 }

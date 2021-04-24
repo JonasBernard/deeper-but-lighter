@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node
 
 onready var textreveal = $Textreveal
 
@@ -8,4 +8,4 @@ func _ready():
 
 
 func _on_Textreveal_finished_reveal():
-	pass
+	print("Done")
