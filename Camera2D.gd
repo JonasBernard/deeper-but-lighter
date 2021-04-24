@@ -22,6 +22,7 @@ func _process(delta):
 		pidx += 1
 		if pidx >= points.size():
 			pidx = -1
+		_process(delta - dist.length() / current_speed )
 		return
 	var velocity = dist.normalized() * current_speed * delta
 	position += velocity
