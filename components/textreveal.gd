@@ -1,8 +1,9 @@
-extends Node2D
+extends Label
+class_name TextReveal
 
 signal finished_reveal()
 
-export(String, MULTILINE) var text = "Text"
+export(String, MULTILINE) var to_render = "Text"
 export var speed = 100.0
 
 ############
@@ -10,23 +11,15 @@ export var speed = 100.0
 ############
 
 
-onready var font_source : RichTextLabel = $FontSource
 var revealed = 0
 var started = false
 var finished = false
 var t = 0
-onready var label = Label.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	label.theme = font_source.theme
-	label.align = Label.ALIGN_CENTER
-	add_child(label)
-
-
-func _show_text(text):
-	label.text = text
-	label.rect_position = -label.rect_size / 2
+	theme = preload("res://fonts/Flipps_Theme.tres")
+	align = Label.ALIGN_CENTER
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -36,15 +29,16 @@ func _process(delta):
 	var additional = int(t)
 	t -= additional
 	revealed += additional
-	_show_text(text.substr(0, revealed))
-	if text.length() == revealed:
+	text = to_render.substr(0, revealed)
+	rect_position = -rect_size / 2
+	if to_render.length() == revealed:
 		started = false
 		finished = true
 		emit_signal("finished_reveal")
 
 func start():
 	started = true
-	label.text = ""
+	text = ""
 	revealed = 0
 	t = 0
 	finished = false

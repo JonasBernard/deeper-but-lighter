@@ -1,16 +1,22 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://components/textreveal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://components/textreveal.gd" type="Script" id=1]
 [ext_resource path="res://scenes/introduction.gd" type="Script" id=2]
 
 [node name="CanvasLayer" type="Node2D"]
+position = Vector2( 654.009, 325.417 )
 script = ExtResource( 2 )
 
-[node name="Textreveal" parent="." instance=ExtResource( 1 )]
-position = Vector2( 639.655, 256.718 )
-text = "Long long time ago
-i fucked your mom
-lmao jk, meant your dad"
-speed = 10.0
-
-[connection signal="finished_reveal" from="Textreveal" to="." method="_on_Textreveal_finished_reveal"]
+[node name="TextReveal" type="Label" parent="."]
+margin_left = 715.918
+margin_top = 322.242
+margin_right = 755.918
+margin_bottom = 336.242
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+to_render = "AHAHAHAHHAHAHA
+Cock and ball torture (CBT), occasionally known as penis torture,
+dick torture or male genitorture, is a sexual activity involving application
+of pain or constriction to the penis or testicles. "

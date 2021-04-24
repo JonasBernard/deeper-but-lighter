@@ -15,11 +15,11 @@ var is_hovered = false
 onready var stretcher : Node2D = $Middle
 onready var left : Node2D = $Left
 onready var right : Node2D = $Right
-onready var font_source : RichTextLabel = $FontSource
 onready var hitbox : CollisionShape2D = $Hitbox
 const BASE_WIDTH = 6
 const BASE_HEIGHT = 16
 
+const theme : Theme = preload("res://fonts/Flipps_Theme.tres")
 const left_nohover = preload("res://textures/components/button/left.png")
 const left_hover = preload("res://textures/components/button/left_hover.png")
 const left_press = preload("res://textures/components/button/left_press.png")
@@ -35,7 +35,7 @@ var label
 func _ready():
 	label = Label.new()
 	label.text = text
-	label.theme = font_source.theme
+	label.theme = theme
 	add_child(label)
 	label.rect_position = -label.rect_size / 2
 	var width = label.rect_size.x

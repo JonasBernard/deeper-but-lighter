@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "ButtonTest",
 "language": "GDScript",
 "path": "res://components/button.gd"
+}, {
+"base": "Label",
+"class": "TextReveal",
+"language": "GDScript",
+"path": "res://components/textreveal.gd"
 } ]
 _global_script_class_icons={
-"ButtonTest": ""
+"ButtonTest": "",
+"TextReveal": ""
 }
 
 [application]
