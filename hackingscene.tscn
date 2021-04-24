@@ -14,7 +14,7 @@ _data = {
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 script = ExtResource( 3 )
-max_speed = 100
+speedup = 150
 
 [node name="Sprite" type="Sprite" parent="Camera2D"]
 position = Vector2( 1.49817, -0.0841775 )

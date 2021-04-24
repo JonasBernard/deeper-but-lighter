@@ -7,15 +7,16 @@ extends Camera2D
 
 onready var path : Path2D = get_node(@"../Path2D")
 onready var points = path.curve.get_baked_points()
-export var max_speed = 10
-
+export var speedup = 600
+export var speedup_time = 5
+export var initial_speed = 100
+onready var current_speed = initial_speed
 var pidx = 0
+var t = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
-func current_speed():
-	return max_speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,14 +24,16 @@ func _process(delta):
 		return
 	var next_point = points[pidx]
 	var dist : Vector2 = next_point - position
-	print(dist.length(),"\t", current_speed() * delta)
-	if dist.length() - current_speed() * delta < 0.5:
+	if t < speedup_time:
+		current_speed += speedup * max(0, min(speedup_time-t, delta))
+		t += delta
+	if dist.length() - current_speed * delta < 0.5:
 		position = next_point
 		pidx += 1
 		if pidx >= points.size():
 			pidx = -1
 		return
-	var velocity = dist.normalized() * current_speed() * delta
+	var velocity = dist.normalized() * current_speed * delta
 	position += velocity
 	
 
