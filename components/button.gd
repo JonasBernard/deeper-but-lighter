@@ -55,6 +55,8 @@ func _on_ButtonTest_input_event(viewport, event, shape_idx):
 		_set_pressed(false)
 		return
 	_set_pressed(true)
+	if not (event.button_index == BUTTON_LEFT):
+		return
 	emit_signal("on_click")
 	
 func _set_all_textures(l, m, r):

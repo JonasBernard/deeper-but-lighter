@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://components/textreveal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/introduction.gd" type="Script" id=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Textreveal" parent="." instance=ExtResource( 1 )]
+position = Vector2( 653.942, 242.431 )
+text = "Long long time ago"
+speed = 10.0
+[connection signal="finished_reveal" from="Textreveal" to="." method="_on_Textreveal_finished_reveal"]
