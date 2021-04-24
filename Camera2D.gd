@@ -1,10 +1,5 @@
 extends Camera2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 onready var path : Path2D = get_node(@"../Path2D")
 onready var points = path.curve.get_baked_points()
 export var speedup = 600
@@ -13,12 +8,7 @@ export var initial_speed = 100
 onready var current_speed = initial_speed
 var pidx = 0
 var t = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if pidx == -1:
 		return
@@ -36,4 +26,3 @@ func _process(delta):
 	var velocity = dist.normalized() * current_speed * delta
 	position += velocity
 	
-
