@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://textures/backgrounds/background_grey.png" type="Texture" id=1]
 [ext_resource path="res://components/PathRenderer.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://components/button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/pause.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/levels/base_level.gd" type="Script" id=6]
+[ext_resource path="res://components/textreveal.gd" type="Script" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -40,7 +41,26 @@ offset = 60
 position = Vector2( 722.995, 115.66 )
 text = "Menu"
 
+[node name="Control" type="Control" parent="."]
+margin_left = 57.67
+margin_top = 289.516
+margin_right = 97.67
+margin_bottom = 329.516
+
+[node name="TextReveal" type="Label" parent="Control"]
+margin_right = 40.0
+margin_bottom = 14.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+to_render = "Im Folgenden finden Sie Neuerungen/Änderungen zu den nationalen und internationalen Beförderungsbedingungen der DB Fernverkehr AG und der DB Regio AG gemäß Paragraph 12 Absatz 6 Allgemeines Eisenbahngesetz (AEG).
+Tarifbekanntmachung national DB Fernverkehr AG und DB Regio AG, Stand 16.04.2021 (PDF, 261KB)
+Tarifbekanntmachungen international DB Fernverkehr AG, Stand 24.04.2021 (PDF, 128KB)"
+speed = 10.0
+
 [node name="PauseMenu" parent="." instance=ExtResource( 5 )]
 visible = false
 position = Vector2( 155.016, 424.068 )
+
 [connection signal="on_click" from="MenuButton" to="." method="_on_MenuButton_on_click"]

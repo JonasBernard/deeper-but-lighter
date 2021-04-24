@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var pause_menu = $"."
-onready var backgroud = $Control/Sprite
+onready var backgroud = $Sprite
 
 func pause():
 	pause_menu.visible = true
