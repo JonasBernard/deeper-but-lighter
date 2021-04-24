@@ -31,7 +31,7 @@ func _process(delta):
 	revealed += additional
 	text = to_render.substr(0, revealed)
 	rect_position = -rect_size / 2
-	if to_render.length() == revealed:
+	if to_render.length() <= revealed:
 		started = false
 		finished = true
 		emit_signal("finished_reveal")

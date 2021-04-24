@@ -33,3 +33,4 @@ fixed_width = 150
 position = Vector2( 640, 250 )
 rotation = -1.74846e-07
 [connection signal="on_click" from="Exit" to="." method="_on_Exit_on_click"]
+[connection signal="on_click" from="Strart" to="." method="_on_Strart_on_click"]
