@@ -41,5 +41,6 @@ position = Vector2( 722.995, 115.66 )
 text = "Menu"
 
 [node name="PauseMenu" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 155.016, 424.068 )
 [connection signal="on_click" from="MenuButton" to="." method="_on_MenuButton_on_click"]
