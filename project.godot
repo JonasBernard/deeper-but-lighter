@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "ButtonTest",
 "language": "GDScript",
-"path": "res://components/buttontest.gd"
+"path": "res://components/button.gd"
 } ]
 _global_script_class_icons={
 "ButtonTest": ""

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://components/Logo.tscn" type="PackedScene" id=1]
-[ext_resource path="res://components/buttontest.tscn" type="PackedScene" id=2]
+[ext_resource path="res://components/button.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,5 +9,5 @@
 position = Vector2( 144.311, 162.722 )
 
 [node name="ButtonTest" parent="." instance=ExtResource( 2 )]
-position = Vector2( 713.045, 367.228 )
-text = "Goodbye"
+position = Vector2( 677.355, 443.519 )
+text = "Exit"
