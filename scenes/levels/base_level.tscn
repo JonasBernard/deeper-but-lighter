@@ -38,7 +38,7 @@ maxhealth = 3
 offset = 60
 
 [node name="MenuButton" parent="." instance=ExtResource( 4 )]
-position = Vector2( 722.995, 115.66 )
+position = Vector2( 734.768, 113.978 )
 text = "Menu"
 
 [node name="Control" type="Control" parent="."]

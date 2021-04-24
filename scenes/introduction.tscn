@@ -21,9 +21,15 @@ to_render = "AHAHAHAHHAHAHA
 Cock and ball torture (CBT), occasionally known as penis torture,
 dick torture or male genitorture, is a sexual activity involving application
 of pain or constriction to the penis or testicles. "
+speed = 10.0
 
 [node name="Continue" parent="." instance=ExtResource( 3 )]
 position = Vector2( 10, 260 )
 text = "Continue"
+
+[node name="Skip" parent="." instance=ExtResource( 3 )]
+position = Vector2( 552.365, 339.54 )
+text = "Skip"
 [connection signal="finished_reveal" from="TextReveal" to="." method="_on_TextReveal_finished_reveal"]
 [connection signal="on_click" from="Continue" to="." method="_on_Button_on_click"]
+[connection signal="on_click" from="Skip" to="." method="_on_Skip_on_click"]
