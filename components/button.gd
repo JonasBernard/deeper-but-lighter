@@ -30,8 +30,10 @@ const right_nohover = preload("res://textures/components/button/right.png")
 const right_hover = preload("res://textures/components/button/right_hover.png")
 const right_press = preload("res://textures/components/button/right_press.png")
 
+var label
+
 func _ready():
-	var label = Label.new()
+	label = Label.new()
 	label.text = text
 	label.theme = font_source.theme
 	add_child(label)
@@ -50,15 +52,23 @@ func _on_ButtonTest_input_event(viewport, event, shape_idx):
 	if not (event is InputEventMouseButton):
 		return
 	if not event.pressed:
-		_set_all_textures(left_hover, middle_hover, right_hover)
+		_set_pressed(false)
 		return
-	_set_all_textures(left_press, middle_press, right_press)
+	_set_pressed(true)
 	emit_signal("on_click")
 	
 func _set_all_textures(l, m, r):
 	left.texture = l
 	stretcher.texture = m
 	right.texture = r
+	
+func _set_pressed(press: bool):
+	if press:
+		label.rect_position = -label.rect_size / 2 + Vector2(0, 4)
+		_set_all_textures(left_press, middle_press, right_press)
+	else:
+		label.rect_position = -label.rect_size / 2
+		_set_all_textures(left_hover, middle_hover, right_hover)
 
 func _on_ButtonTest_mouse_entered():
 	if not is_hovered:
