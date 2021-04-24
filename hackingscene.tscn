@@ -7,7 +7,6 @@
 [ext_resource path="res://hackingscene.gd" type="Script" id=6]
 [ext_resource path="res://textures/icons/heart.png" type="Texture" id=7]
 
-
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -74.612, 128.932, 0, 0, 0, 0, 390.299, 185.629, 0, 0, 0, 0, 520.071, -115.492, 0, 0, 0, 0, 182.412, -341.018, 0, 0, 0, 0, -153.987, 20.5792, 0, 0, 0, 0, -131.308, 224.686 )
@@ -38,5 +37,4 @@ environment = ExtResource( 4 )
 [node name="heart" type="Sprite" parent="."]
 position = Vector2( 467.501, -263.722 )
 texture = ExtResource( 7 )
-
 [connection signal="on_click" from="HackButton" to="." method="_on_HackButton_on_click"]
