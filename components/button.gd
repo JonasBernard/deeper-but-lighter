@@ -22,10 +22,13 @@ const BASE_HEIGHT = 16
 
 const left_nohover = preload("res://textures/components/button/left.png")
 const left_hover = preload("res://textures/components/button/left_hover.png")
+const left_press = preload("res://textures/components/button/left_press.png")
 const middle_nohover = preload("res://textures/components/button/middle.png")
 const middle_hover = preload("res://textures/components/button/middle_hover.png")
+const middle_press = preload("res://textures/components/button/middle_press.png")
 const right_nohover = preload("res://textures/components/button/right.png")
 const right_hover = preload("res://textures/components/button/right_hover.png")
+const right_press = preload("res://textures/components/button/right_press.png")
 
 func _ready():
 	var label = Label.new()
@@ -47,7 +50,9 @@ func _on_ButtonTest_input_event(viewport, event, shape_idx):
 	if not (event is InputEventMouseButton):
 		return
 	if not event.pressed:
+		_set_all_textures(left_hover, middle_hover, right_hover)
 		return
+	_set_all_textures(left_press, middle_press, right_press)
 	emit_signal("on_click")
 	
 func _set_all_textures(l, m, r):
