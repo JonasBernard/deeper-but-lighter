@@ -14,6 +14,7 @@ func _ready():
 		var heart = h.instance()
 		hearts.append(heart)
 		heart.position = Vector2(i * offset, 0)
+		heart.scale = Vector2(3,3)
 		add_child(heart)
 		
 
