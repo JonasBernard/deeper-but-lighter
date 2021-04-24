@@ -48,6 +48,7 @@ __meta__ = {
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
+
 [connection signal="input_event" from="." to="." method="_on_ButtonTest_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_ButtonTest_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_ButtonTest_mouse_exited"]
