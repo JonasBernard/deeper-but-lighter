@@ -37,4 +37,5 @@ environment = ExtResource( 4 )
 [node name="heart" type="Sprite" parent="."]
 position = Vector2( 467.501, -263.722 )
 texture = ExtResource( 7 )
+
 [connection signal="on_click" from="HackButton" to="." method="_on_HackButton_on_click"]
