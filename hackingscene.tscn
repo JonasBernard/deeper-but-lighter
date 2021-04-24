@@ -22,8 +22,8 @@ speedup = 150
 speedup_time = 10
 
 [node name="Sprite" type="Sprite" parent="Camera2D"]
-position = Vector2( 1.49817, -0.0841775 )
-scale = Vector2( 0.667, 0.667 )
+position = Vector2( 1.49817, -2.26822 )
+scale = Vector2( 0.667, 0.681832 )
 texture = ExtResource( 1 )
 
 [node name="Path2D" type="Path2D" parent="."]
