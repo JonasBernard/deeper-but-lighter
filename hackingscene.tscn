@@ -39,5 +39,4 @@ texture = ExtResource( 2 )
 environment = ExtResource( 4 )
 
 [node name="HackButton" parent="." instance=ExtResource( 5 )]
-
 [connection signal="on_click" from="HackButton" to="." method="_on_HackButton_on_click"]
