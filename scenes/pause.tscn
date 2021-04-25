@@ -11,18 +11,17 @@ script = ExtResource( 2 )
 
 [node name="Resume" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
-position = Vector2( -1.68179, -50 )
+position = Vector2( 0, -50 )
 z_index = 1
 text = "Resume"
 fixed_width = 250
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -8.98199, -1.80298 )
 texture = ExtResource( 3 )
 
 [node name="Main Menu" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
-position = Vector2( -1.68179, 50 )
+position = Vector2( 0, 50 )
 z_index = 1
 text = "Main Menu"
 fixed_width = 250
@@ -36,5 +35,9 @@ theme = ExtResource( 4 )
 text = "Pause"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="on_click" from="Resume" to="." method="_on_Resume_on_click"]
 [connection signal="on_click" from="Main Menu" to="." method="_on_Main_Menu_on_click"]
