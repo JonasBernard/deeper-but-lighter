@@ -27,7 +27,6 @@ offset = 60
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource( 5 )]
 visible = false
-position = Vector2( 0, 0 )
 
 [node name="background_blue" type="Sprite" parent="Camera2D"]
 position = Vector2( 8.47589, -0.203278 )
@@ -41,7 +40,7 @@ script = ExtResource( 2 )
 curve = SubResource( 1 )
 
 [node name="MenuButton" parent="." instance=ExtResource( 4 )]
-position = Vector2( 740.235, 113.978 )
+position = Vector2( 725.099, 115.66 )
 text = "Menu"
 
 [node name="Control" type="Control" parent="."]
@@ -63,5 +62,4 @@ Tarifbekanntmachungen international DB Fernverkehr AG, Stand 24.04.2021 (PDF, 12
 speed = 10.0
 
 [node name="LevelHolder" type="Node2D" parent="."]
-
 [connection signal="on_click" from="MenuButton" to="." method="_on_MenuButton_on_click"]
