@@ -6,22 +6,24 @@
 
 [node name="PauseMenu" type="Node2D"]
 pause_mode = 2
+position = Vector2( 640, 360 )
+z_index = 6
 script = ExtResource( 2 )
 
 [node name="Resume" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
-position = Vector2( -1.68179, -50 )
+position = Vector2( 0, -50 )
 z_index = 1
 text = "Resume"
 fixed_width = 250
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -8.98199, -1.80298 )
+modulate = Color( 1, 1, 1, 0.372549 )
 texture = ExtResource( 3 )
 
 [node name="Main Menu" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
-position = Vector2( -1.68179, 50 )
+position = Vector2( 0, 50 )
 z_index = 1
 text = "Main Menu"
 fixed_width = 250

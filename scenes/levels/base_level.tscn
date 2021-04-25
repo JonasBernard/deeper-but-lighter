@@ -14,12 +14,20 @@ _data = {
 }
 
 [node name="BaseLevel" type="Node2D"]
-position = Vector2( 486.33, -65.5159 )
 script = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 153.457, 427.259 )
 current = true
+
+[node name="healthbar" parent="Camera2D" instance=ExtResource( 3 )]
+position = Vector2( -595.377, -321.363 )
+maxhealth = 3
+offset = 60
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 0, 0 )
 
 [node name="background_blue" type="Sprite" parent="Camera2D"]
 position = Vector2( 8.47589, -0.203278 )
@@ -31,11 +39,6 @@ script = ExtResource( 2 )
 
 [node name="Path2D" type="Path2D" parent="PathRenderer"]
 curve = SubResource( 1 )
-
-[node name="healthbar" parent="." instance=ExtResource( 3 )]
-position = Vector2( -441.92, 105.896 )
-maxhealth = 3
-offset = 60
 
 [node name="MenuButton" parent="." instance=ExtResource( 4 )]
 position = Vector2( 740.235, 113.978 )
@@ -59,7 +62,6 @@ Tarifbekanntmachung national DB Fernverkehr AG und DB Regio AG, Stand 16.04.2021
 Tarifbekanntmachungen international DB Fernverkehr AG, Stand 24.04.2021 (PDF, 128KB)"
 speed = 10.0
 
-[node name="PauseMenu" parent="." instance=ExtResource( 5 )]
-visible = false
-position = Vector2( 155.016, 424.068 )
+[node name="LevelHolder" type="Node2D" parent="."]
+
 [connection signal="on_click" from="MenuButton" to="." method="_on_MenuButton_on_click"]
