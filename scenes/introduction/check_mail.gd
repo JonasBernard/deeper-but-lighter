@@ -2,6 +2,7 @@ extends Node2D
 
 onready var passwordfield = $password
 var trys = 0
+var correct = "correct"
 
 func _ready():
 	pass # Replace with function body.
@@ -11,7 +12,7 @@ func login():
 	get_tree().change_scene("res://scenes/introduction/mail.tscn")
 
 func check_pw():
-	if passwordfield.text == "correct":
+	if passwordfield.text == correct:
 		login()
 	else:
 		if passwordfield.text == "deeper" or trys == 10:
@@ -20,6 +21,9 @@ func check_pw():
 		if trys == 20:
 			$Monolog3.start()
 			$Monolog2.visible = false
+		if trys == 30:
+			$Reset.visible = true
+			correct = "tom"
 		trys = trys + 1
 		$Incorrect.visible = true
 		passwordfield.text = ""
