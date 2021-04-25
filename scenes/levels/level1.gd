@@ -16,6 +16,7 @@ func _on_Any_button_click(btn_idx):
 		sequence_index += 1
 		if sequence_index == buttons.size():
 			finish_level()
+			return
 		buttons[sequence_index].visible = true
 		print("Correct button: ", btn_idx)
 	else:

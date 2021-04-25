@@ -11,36 +11,45 @@ script = ExtResource( 1 )
 
 [node name="Button" parent="ButtonHolder" instance=ExtResource( 2 )]
 position = Vector2( -370.845, -187.832 )
+text = "1"
 fixed_width = 30
 
 [node name="Button2" parent="ButtonHolder" instance=ExtResource( 2 )]
 position = Vector2( -256.483, 79.5727 )
+text = "2"
 fixed_width = 30
 
 [node name="Button3" parent="ButtonHolder" instance=ExtResource( 2 )]
 position = Vector2( 269.918, 246.07 )
+text = "3"
 fixed_width = 30
 
 [node name="Button4" parent="ButtonHolder" instance=ExtResource( 2 )]
 position = Vector2( -401.118, 15.6646 )
+text = "4"
 fixed_width = 30
 
 [node name="Button5" parent="ButtonHolder" instance=ExtResource( 2 )]
 position = Vector2( -130.349, -46.5617 )
+text = "5"
 fixed_width = 30
 
 [node name="Button6" parent="ButtonHolder" instance=ExtResource( 2 )]
 position = Vector2( -158.94, 224.207 )
+text = "6"
 fixed_width = 30
 
 [node name="Button7" parent="ButtonHolder" instance=ExtResource( 2 )]
 position = Vector2( 128.647, 79.5727 )
+text = "7"
 fixed_width = 30
 
 [node name="Button8" parent="ButtonHolder" instance=ExtResource( 2 )]
 position = Vector2( 21.0123, -209.696 )
+text = "8"
 fixed_width = 30
 
 [node name="Button9" parent="ButtonHolder" instance=ExtResource( 2 )]
 position = Vector2( 216.1, -39.8346 )
+text = "9"
 fixed_width = 30
