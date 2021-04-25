@@ -52,6 +52,7 @@ _global_script_class_icons={
 
 config/name="Deeper but Lighter"
 run/main_scene="res://scenes/menu.tscn"
+boot_splash/bg_color=Color( 0.109804, 0.129412, 0.14902, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -62,12 +63,19 @@ Settings="*res://components/Settings.gd"
 
 window/size/width=1280
 window/size/height=720
+window/size/fullscreen=true
+mouse_cursor/custom_image="res://textures/icons/cursor.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
+
+[gui]
+
+theme/custom="res://fonts/Flipps_Theme.tres"
+theme/custom_font="res://fonts/Flipps.tres"
 
 [input]
 
@@ -94,6 +102,8 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"

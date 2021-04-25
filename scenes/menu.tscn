@@ -95,7 +95,7 @@ texture = ExtResource( 3 )
 [node name="Content" type="Node2D" parent="."]
 
 [node name="Badge" type="Node2D" parent="Content"]
-position = Vector2( 630.621, 247.313 )
+position = Vector2( 630.621, -217.796 )
 
 [node name="bluestripe" type="Sprite" parent="Content/Badge"]
 position = Vector2( -1.27783, -0.902592 )
@@ -116,12 +116,12 @@ scale = Vector2( 4, 4 )
 texture = SubResource( 1 )
 
 [node name="Exit" parent="Content" instance=ExtResource( 2 )]
-position = Vector2( 850, 500 )
+position = Vector2( 1508.94, 500 )
 text = "Exit"
 fixed_width = 150
 
 [node name="Strart" parent="Content" instance=ExtResource( 2 )]
-position = Vector2( 450, 500 )
+position = Vector2( -150, 500 )
 text = "Start"
 fixed_width = 150
 
@@ -131,7 +131,6 @@ anims/startgame = SubResource( 2 )
 
 [node name="Outgoing" type="AnimationPlayer" parent="."]
 anims/tointro = SubResource( 3 )
-
 [connection signal="on_click" from="Content/Exit" to="." method="_on_Exit_on_click"]
 [connection signal="on_click" from="Content/Strart" to="." method="_on_Strart_on_click"]
 [connection signal="animation_finished" from="Transitions" to="." method="_on_Transitions_animation_finished"]
