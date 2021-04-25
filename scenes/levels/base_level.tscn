@@ -39,6 +39,5 @@ text = "Menu"
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource( 5 )]
 visible = false
-
 [connection signal="done" from="Camera2D" to="." method="_on_Camera2D_done"]
 [connection signal="on_click" from="Camera2D/MenuButton" to="." method="_on_MenuButton_on_click"]
