@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Deeper and Deeper"
+config/name="Deeper but Lighter"
 run/main_scene="res://scenes/menu.tscn"
 config/icon="res://icon.png"
 
