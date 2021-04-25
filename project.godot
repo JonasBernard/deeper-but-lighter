@@ -69,7 +69,6 @@ Settings="*res://components/Settings.gd"
 
 window/size/width=1280
 window/size/height=720
-window/size/fullscreen=true
 mouse_cursor/custom_image="res://textures/icons/cursor.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
@@ -114,4 +113,3 @@ vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 0.00392157, 0.0862745, 0.160784, 1 )
 environment/default_environment="res://default_env.tres"
-<<<<<<<Updatedupstreamenvironment/default_clear_color=Color( 0.00392157, 0.0862745, 0.160784, 1 )
