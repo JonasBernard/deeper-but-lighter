@@ -13,9 +13,9 @@ text = "Hey Tom,
 how are you going?
 Did you read that article in the newspaper this
 morning? Barak Obama himself stated to have
-seen some \"mysteriois actions\" around the streets in Washinton.
+seen some \"mysterious actions\" around the streets in Washington.
 They have to do with some data leaks in a datacenter nearby.
 But they could not give any more information, they wrote.
 
-Isn't that strange? I mean those time. Chaotic. Just chaotic."
+Isn't that strange? I mean those times. Chaotic. Just chaotic."
 [connection signal="next" from="CanvasLayer" to="." method="_on_CanvasLayer_next"]
