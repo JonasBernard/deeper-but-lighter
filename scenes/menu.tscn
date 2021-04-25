@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://components/Logo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://components/button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://textures/backgrounds/background_grey.png" type="Texture" id=3]
 [ext_resource path="res://textures/backgrounds/background_blue.png" type="Texture" id=4]
 [ext_resource path="res://scenes/menu.gd" type="Script" id=5]
+[ext_resource path="res://textures/texts/name.png" type="Texture" id=6]
+[ext_resource path="res://textures/icons/light_bulb.png" type="Texture" id=7]
+[ext_resource path="res://textures/icons/light_bulb_r.png" type="Texture" id=8]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 2
+fps = 1.0
+frame_0/texture = ExtResource( 7 )
+frame_1/texture = ExtResource( 8 )
+frame_1/delay_sec = 0.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
@@ -30,7 +40,17 @@ text = "Start"
 fixed_width = 150
 
 [node name="Logo" parent="." instance=ExtResource( 1 )]
-position = Vector2( 640, 250 )
+position = Vector2( 255.566, 250 )
 rotation = -1.74846e-07
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 666.085, 247.613 )
+scale = Vector2( 4.14939, 4.14939 )
+texture = ExtResource( 6 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 1081.89, 246.278 )
+scale = Vector2( 4.35795, 4.35795 )
+texture = SubResource( 1 )
 [connection signal="on_click" from="Exit" to="." method="_on_Exit_on_click"]
 [connection signal="on_click" from="Strart" to="." method="_on_Strart_on_click"]
