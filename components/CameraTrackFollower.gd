@@ -29,7 +29,6 @@ func _process(delta):
 		return
 	var next_point = _points[_pidx]
 	var dist : Vector2 = next_point - position
-	print("Camera movement", dist)
 	if _t < speedup_time:
 		current_speed += speedup * max(0, min(speedup_time-_t, delta))
 		_t += delta
