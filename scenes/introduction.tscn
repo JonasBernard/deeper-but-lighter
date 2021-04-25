@@ -34,6 +34,7 @@ text = "Continue"
 [node name="Skip" parent="." instance=ExtResource( 3 )]
 position = Vector2( 557.234, 339.165 )
 text = "Skip"
+
 [connection signal="finished_reveal" from="TextReveal" to="." method="_on_TextReveal_finished_reveal"]
 [connection signal="on_click" from="Continue" to="." method="_on_Button_on_click"]
 [connection signal="on_click" from="Skip" to="." method="_on_Skip_on_click"]

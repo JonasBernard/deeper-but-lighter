@@ -1,4 +1,4 @@
-extends Node
+extends Level
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +10,7 @@ func _ready():
 
 func _on_TextReveal_finished_reveal():
 	$Continue.visible = true
-
+	$Skip.visible = false
 
 
 func _on_Button_on_click():
