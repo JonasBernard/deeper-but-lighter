@@ -4,7 +4,10 @@ class_name TextReveal
 signal finished_reveal()
 
 export(String, MULTILINE) var to_render = "Text"
-export var speed = 100.0
+export var speed = 20.0
+
+export var xpos = 0
+export var ypos = 0
 
 ############
 # INTERNAL #
@@ -19,6 +22,7 @@ var t = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	theme = preload("res://fonts/Flipps_Theme.tres")
+	rect_position = Vector2(xpos, ypos)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,7 +33,7 @@ func _process(delta):
 	t -= additional
 	revealed += additional
 	text = to_render.substr(0, revealed)
-	rect_position = -rect_size / 2
+	rect_position = -rect_size / 2 + Vector2(xpos, ypos)
 	if to_render.length() <= revealed:
 		started = false
 		finished = true

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/introduction/introduction.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/introduction/mail.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 360 )
+text = "Hey Tom,
+
+how are you going?
+Did you read that article in the newspaper this
+morning? Barak Obama himself stated to have
+seen some \"mysteriois actions\" around the streets in Washinton.
+They have to do with some data leaks in a datacenter nearby.
+But they could not give any more information, they wrote.
+
+Isn't that strange? I mean those time. Chaotic. Just chaotic."
+[connection signal="next" from="CanvasLayer" to="." method="_on_CanvasLayer_next"]

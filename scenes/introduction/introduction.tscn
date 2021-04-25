@@ -1,12 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://components/textreveal.gd" type="Script" id=1]
-[ext_resource path="res://scenes/introduction.gd" type="Script" id=2]
+[ext_resource path="res://scenes/introduction/introduction.gd" type="Script" id=2]
 [ext_resource path="res://components/button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/backgrounds/background_grey.png" type="Texture" id=4]
 
 [node name="CanvasLayer" type="Node2D"]
-position = Vector2( 654.009, 325.417 )
 script = ExtResource( 2 )
 
 [node name="background_grey" type="Sprite" parent="."]
@@ -14,34 +13,22 @@ texture = ExtResource( 4 )
 
 [node name="TextReveal" type="Label" parent="."]
 margin_left = -500.0
-margin_top = -16.0
+margin_top = -200.0
 margin_right = 500.0
-margin_bottom = 366.0
+margin_bottom = 200.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-to_render = "Hi Tim,
-
-past monday, the following happend to me:
-
-I played deeper but lighter...
-
-this was just incredible. Try it out yourself.
-
-Kind reguards,
-
-Max"
-speed = 10.0
+to_render = "Failed to load Tex :("
 
 [node name="Continue" parent="." instance=ExtResource( 3 )]
-position = Vector2( 10, 260 )
+position = Vector2( 0, 250 )
 text = "Continue"
 
 [node name="Skip" parent="." instance=ExtResource( 3 )]
-position = Vector2( 557.234, 339.165 )
+position = Vector2( 545.262, 293.882 )
 text = "Skip"
-
 [connection signal="finished_reveal" from="TextReveal" to="." method="_on_TextReveal_finished_reveal"]
 [connection signal="on_click" from="Continue" to="." method="_on_Button_on_click"]
 [connection signal="on_click" from="Skip" to="." method="_on_Skip_on_click"]

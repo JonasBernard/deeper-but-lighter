@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://components/Level.gd" type="Script" id=1]
+[ext_resource path="res://components/card/card.gd" type="Script" id=2]
+[ext_resource path="res://fonts/Flipps_Theme.tres" type="Theme" id=3]
+[ext_resource path="res://components/textrevealbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://components/button.tscn" type="PackedScene" id=5]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Card" type="Sprite" parent="."]
+position = Vector2( 640, 320 )
+script = ExtResource( 2 )
+width = 600
+height = 400
+
+[node name="username" type="LineEdit" parent="."]
+margin_left = 534.333
+margin_top = 241.937
+margin_right = 746.333
+margin_bottom = 283.937
+text = "Tom"
+editable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="password" type="LineEdit" parent="."]
+margin_left = 534.333
+margin_top = 298.667
+margin_right = 746.333
+margin_bottom = 340.667
+secret = true
+placeholder_text = "Password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Log in" parent="." instance=ExtResource( 5 )]
+position = Vector2( 640.861, 400.15 )
+text = "Log in"
+
+[node name="Monolog1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 600 )
+text = "Oh, shit, what was my password again?"
+
+[node name="Monolog2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 600 )
+text = "The password is deeper than *you think*..."
+autostart = false
+
+[node name="Monolog3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 600 )
+text = "The correct password is not incorrect."
+autostart = false
+
+[node name="Instuction" type="RichTextLabel" parent="."]
+margin_left = 963.0
+margin_top = 191.0
+margin_right = 1276.0
+margin_bottom = 420.0
+bbcode_enabled = true
+bbcode_text = "Fill in the form
+with a password
+*you think* is
+correct."
+text = "Fill in the form
+with a password
+*you think* is
+correct."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Incorrect" type="Label" parent="."]
+visible = false
+margin_left = 535.0
+margin_top = 440.858
+margin_right = 746.0
+margin_bottom = 478.858
+theme = ExtResource( 3 )
+text = "Incorrect."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeepMail" type="Label" parent="."]
+margin_left = 534.0
+margin_top = 167.0
+margin_right = 747.0
+margin_bottom = 222.0
+text = "DeepMail"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_changed" from="password" to="." method="_on_password_text_changed"]
+[connection signal="text_entered" from="password" to="." method="_on_password_text_entered"]
+[connection signal="on_click" from="Log in" to="." method="_on_Button_on_click"]

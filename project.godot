@@ -29,11 +29,6 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://git_api.gdns"
 }, {
-"base": "CanvasLayer",
-"class": "Introduction",
-"language": "GDScript",
-"path": "res://scenes/introduction/introduction.gd"
-}, {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
@@ -54,7 +49,6 @@ _global_script_class_icons={
 "CameraTrackFollower": "",
 "Card": "",
 "GitAPI": "",
-"Introduction": "",
 "Level": "",
 "PathRenderer": "",
 "TextReveal": ""
@@ -117,5 +111,5 @@ quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_clear_color=Color( 0.00392157, 0.176471, 0.329412, 1 )
+environment/default_clear_color=Color( 0.00392157, 0.0862745, 0.160784, 1 )
 environment/default_environment="res://default_env.tres"

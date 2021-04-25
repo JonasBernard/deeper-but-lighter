@@ -15,4 +15,4 @@ func _on_Strart_on_click():
 
 
 func _on_Outgoing_animation_finished(anim_name):
-	get_tree().change_scene("res://scenes/introduction.tscn")
+	get_tree().change_scene("res://scenes/introduction/come home.tscn")
