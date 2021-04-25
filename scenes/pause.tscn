@@ -25,6 +25,5 @@ position = Vector2( -1.68179, 50 )
 z_index = 1
 text = "Main Menu"
 fixed_width = 250
-
 [connection signal="on_click" from="Resume" to="." method="_on_Resume_on_click"]
 [connection signal="on_click" from="Main Menu" to="." method="_on_Main_Menu_on_click"]
