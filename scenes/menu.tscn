@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://components/Logo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://components/button.tscn" type="PackedScene" id=2]
@@ -16,6 +16,40 @@ frame_0/texture = ExtResource( 7 )
 frame_1/texture = ExtResource( 8 )
 frame_1/delay_sec = 0.0
 
+[sub_resource type="Animation" id=2]
+resource_name = "startgame"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite2:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -217.796, -0.25, 0, 0.25, 0, 247.313, -0.74, 19.4815, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Strart:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -150, -0.25, 0, 0.25, 0, 450, -1.4, 5.0965, 0.25, 0 ),
+"times": PoolRealArray( 0.8, 2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Exit:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1508.94, -0.25, 0, 0.25, 0, 850, -1.39, 12.618, 0.25, 0 ),
+"times": PoolRealArray( 0.8, 2 )
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -25,9 +59,24 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 630.621, 248.9 )
+position = Vector2( 630.621, 247.313 )
 scale = Vector2( 0.744024, 0.314293 )
 texture = ExtResource( 4 )
+
+[node name="logo" parent="Sprite2" instance=ExtResource( 1 )]
+position = Vector2( -504.09, 3.49988 )
+rotation = -4.13912e-07
+scale = Vector2( 1.34404, 3.18174 )
+
+[node name="name" type="Sprite" parent="Sprite2"]
+position = Vector2( 47.6652, -4.09491 )
+scale = Vector2( 5.57696, 13.2023 )
+texture = ExtResource( 6 )
+
+[node name="lightbuldb" type="Sprite" parent="Sprite2"]
+position = Vector2( 606.525, -8.34259 )
+scale = Vector2( 5.85727, 13.8659 )
+texture = SubResource( 1 )
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
 position = Vector2( 850, 500 )
@@ -39,18 +88,8 @@ position = Vector2( 450, 500 )
 text = "Start"
 fixed_width = 150
 
-[node name="Logo" parent="." instance=ExtResource( 1 )]
-position = Vector2( 255.566, 250 )
-rotation = -1.74846e-07
-
-[node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 666.085, 247.613 )
-scale = Vector2( 4.14939, 4.14939 )
-texture = ExtResource( 6 )
-
-[node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( 1081.89, 246.278 )
-scale = Vector2( 4.35795, 4.35795 )
-texture = SubResource( 1 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "startgame"
+anims/startgame = SubResource( 2 )
 [connection signal="on_click" from="Exit" to="." method="_on_Exit_on_click"]
 [connection signal="on_click" from="Strart" to="." method="_on_Strart_on_click"]
