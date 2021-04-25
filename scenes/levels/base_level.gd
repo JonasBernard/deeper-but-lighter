@@ -39,13 +39,23 @@ func _add_hooks():
 	_loaded_level.connect("lost_heart", self, "_on_Level_lost_heart")
 
 func _on_Level_level_finished():
-	pass # TODO
+	_load_next_level()
 
 func _on_Level_lost_heart():
 	_health -= 1
 	if _health == 0:
 		pass # TODO: lose scenario
 	_health_bar.set_health(_health)
+
+func _load_next_level():
+	_unload_current_level()
+	_current_level += 1
+	if _current_level > _levels.size():
+		get_tree().change_scene("res://scenes/menu.tscn")
+	_load_current_level()
+
+func _unload_current_level():
+	pass
 
 func _load_current_level():
 	if _loaded_level != null:

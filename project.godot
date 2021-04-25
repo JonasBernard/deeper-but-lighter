@@ -54,6 +54,10 @@ config/name="Deeper but Lighter"
 run/main_scene="res://scenes/menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Settings="*res://components/Settings.gd"
+
 [display]
 
 window/size/width=1280
