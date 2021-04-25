@@ -19,10 +19,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://components/CameraTrackFollower.gd"
 }, {
+"base": "Sprite",
+"class": "Card",
+"language": "GDScript",
+"path": "res://components/card/card.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://git_api.gdns"
+}, {
+"base": "CanvasLayer",
+"class": "Introduction",
+"language": "GDScript",
+"path": "res://scenes/introduction/introduction.gd"
 }, {
 "base": "Node2D",
 "class": "Level",
@@ -42,7 +52,9 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "ButtonTest": "",
 "CameraTrackFollower": "",
+"Card": "",
 "GitAPI": "",
+"Introduction": "",
 "Level": "",
 "PathRenderer": "",
 "TextReveal": ""
@@ -63,7 +75,6 @@ Settings="*res://components/Settings.gd"
 
 window/size/width=1280
 window/size/height=720
-window/size/fullscreen=true
 mouse_cursor/custom_image="res://textures/icons/cursor.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
@@ -106,4 +117,5 @@ quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.00392157, 0.176471, 0.329412, 1 )
 environment/default_environment="res://default_env.tres"

@@ -8,7 +8,6 @@ background_sky = SubResource( 1 )
 background_color = Color( 0.305882, 0.164706, 0.164706, 1 )
 background_energy = 0.0
 background_canvas_max_layer = 1
-glow_enabled = true
 glow_blend_mode = 0
 glow_bicubic_upscale = true
 adjustment_brightness = 0.36
