@@ -13,9 +13,9 @@ texture = ExtResource( 4 )
 
 [node name="TextReveal" type="Label" parent="."]
 margin_left = -500.0
-margin_top = -200.0
+margin_top = -293.0
 margin_right = 500.0
-margin_bottom = 200.0
+margin_bottom = 293.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

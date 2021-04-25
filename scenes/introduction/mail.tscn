@@ -17,5 +17,11 @@ seen some \"mysterious actions\" around the streets in Washington.
 They have to do with some data leaks in a datacenter nearby.
 But they could not give any more information, they wrote.
 
-Isn't that strange? I mean those times. Chaotic. Just chaotic."
+Isn't that strange? I mean those times. Chaotic. Just chaotic.
+Lets meet at George Washington Bridge at 7PM and talk
+about what happend. Will you be there?
+
+See you
+
+Matt"
 [connection signal="next" from="CanvasLayer" to="." method="_on_CanvasLayer_next"]
