@@ -1,6 +1,6 @@
 extends Node2D
 class_name ButtonTest
-export var text = "Hello, Button"
+export var text = "Hello, Button" setget _text
 # Force a fixed width if != -1
 export var fixed_width = -1
 signal on_click()
@@ -30,13 +30,21 @@ const right_nohover = preload("res://textures/components/button/right.png")
 const right_hover = preload("res://textures/components/button/right_hover.png")
 const right_press = preload("res://textures/components/button/right_press.png")
 
-var label
+onready var label = Label.new()
 
 func _ready():
-	label = Label.new()
-	label.text = text
 	label.theme = theme
 	add_child(label)
+	_text_changed()
+
+func _text(value):
+	text = value
+	_text_changed()
+
+func _text_changed():
+	label.text = ""
+	label.rect_size = Vector2(0,0)
+	label.text = text
 	label.rect_position = -label.rect_size / 2
 	var width = label.rect_size.x
 	if fixed_width > 0:
@@ -47,8 +55,8 @@ func _ready():
 	hitbox.shape = RectangleShape2D.new()
 	hitbox.shape.extents.y = 32
 	hitbox.shape.extents.x = right.position.x + right.scale.x * BASE_WIDTH / 2
-
-
+	update()
+	label.update()
 
 func _on_ButtonTest_input_event(viewport, event, shape_idx):
 	if not (event is InputEventMouseButton):

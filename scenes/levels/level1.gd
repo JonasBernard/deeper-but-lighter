@@ -10,6 +10,8 @@ var sequence_index = 0
 func _ready():
 	for i in range(buttons.size()):
 		buttons[i].connect("on_click", self, "_on_AnyButton_click", [i])
+		buttons[i].text = str(i)
+		# buttons[i].visible = false
 
 func _on_Any_button_click(btn_idx):
 	if btn_idx == order[sequence_index]:
