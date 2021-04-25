@@ -50,7 +50,7 @@ func _on_Level_lost_heart():
 func _load_next_level():
 	_unload_current_level()
 	_current_level += 1
-	if _current_level > _levels.size():
+	if _current_level >= _levels.size():
 		get_tree().change_scene("res://scenes/menu.tscn")
 		return
 	_load_current_level()
