@@ -3,7 +3,7 @@
 [ext_resource path="res://components/Logo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://components/button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://textures/backgrounds/background_grey.png" type="Texture" id=3]
-[ext_resource path="res://textures/backgrounds/background_blue.png" type="Texture" id=4]
+[ext_resource path="res://textures/backgrounds/background__darkblue.png" type="Texture" id=4]
 [ext_resource path="res://scenes/menu.gd" type="Script" id=5]
 [ext_resource path="res://textures/texts/name.png" type="Texture" id=6]
 [ext_resource path="res://textures/icons/light_bulb.png" type="Texture" id=7]
@@ -52,6 +52,5 @@ texture = ExtResource( 6 )
 position = Vector2( 1081.89, 246.278 )
 scale = Vector2( 4.35795, 4.35795 )
 texture = SubResource( 1 )
-
 [connection signal="on_click" from="Exit" to="." method="_on_Exit_on_click"]
 [connection signal="on_click" from="Strart" to="." method="_on_Strart_on_click"]
