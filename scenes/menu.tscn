@@ -131,6 +131,7 @@ anims/startgame = SubResource( 2 )
 
 [node name="Outgoing" type="AnimationPlayer" parent="."]
 anims/tointro = SubResource( 3 )
+
 [connection signal="on_click" from="Content/Exit" to="." method="_on_Exit_on_click"]
 [connection signal="on_click" from="Content/Strart" to="." method="_on_Strart_on_click"]
 [connection signal="animation_finished" from="Transitions" to="." method="_on_Transitions_animation_finished"]
