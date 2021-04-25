@@ -44,7 +44,9 @@ func _ready():
 	stretcher.scale.x = width / BASE_WIDTH
 	left.position.x = -width / 2 - BASE_WIDTH
 	right.position.x = width / 2 + BASE_WIDTH
-	hitbox.shape.extents.x = width / 2 + BASE_WIDTH * 3
+	hitbox.shape = RectangleShape2D.new()
+	hitbox.shape.extents.y = 32
+	hitbox.shape.extents.x = right.position.x + right.scale.x * BASE_WIDTH / 2
 
 
 
