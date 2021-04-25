@@ -13,4 +13,3 @@ func lose_heart():
 
 func finish_level():
 	emit_signal("level_finished")
-
