@@ -19,7 +19,6 @@ var t = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	theme = preload("res://fonts/Flipps_Theme.tres")
-	align = Label.ALIGN_CENTER
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

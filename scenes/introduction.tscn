@@ -13,18 +13,25 @@ script = ExtResource( 2 )
 texture = ExtResource( 4 )
 
 [node name="TextReveal" type="Label" parent="."]
-margin_left = -773.0
+margin_left = -500.0
 margin_top = -16.0
-margin_right = 774.0
+margin_right = 500.0
 margin_bottom = 366.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-to_render = "AHAHAHAHHAHAHA
-Cock and ball torture (CBT), occasionally known as penis torture,
-dick torture or male genitorture, is a sexual activity involving application
-of pain or constriction to the penis or testicles. "
+to_render = "Hi Tim,
+
+past monday, the following happend to me:
+
+I played deeper but lighter...
+
+this was just incredible. Try it out yourself.
+
+Kind reguards,
+
+Max"
 speed = 10.0
 
 [node name="Continue" parent="." instance=ExtResource( 3 )]
