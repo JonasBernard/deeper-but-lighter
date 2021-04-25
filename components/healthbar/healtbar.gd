@@ -1,6 +1,6 @@
 extends Node2D
 
-export var maxhealth = 3
+export var maxhealth = 10
 export var offset = 40
 
 var h: PackedScene = preload("res://components/healthbar/heart.tscn")

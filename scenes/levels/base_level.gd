@@ -7,7 +7,7 @@ onready var _path_renderer : PathRenderer = $PathRenderer
 onready var _health_bar = $Camera2D/healthbar
 onready var _last_camera_location : Vector2 = $Camera2D.position
 const _levels = [
-	preload("res://scenes/levels/repeat_this.tscn")
+	preload("res://scenes/levels/level1.tscn")
 ]
 
 var _current_level = 0
@@ -17,7 +17,7 @@ var _health = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_health_bar.maxhealth = 10
+	_health_bar.set_health(10)
 	_load_current_level()
 
 func _get_next_level_pos() -> Vector2:
@@ -52,6 +52,7 @@ func _load_next_level():
 	_current_level += 1
 	if _current_level > _levels.size():
 		get_tree().change_scene("res://scenes/menu.tscn")
+		return
 	_load_current_level()
 
 func _unload_current_level():

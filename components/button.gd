@@ -39,6 +39,8 @@ func _ready():
 
 func _text(value):
 	text = value
+	if label == null:
+		return
 	_text_changed()
 
 func _text_changed():
