@@ -9,15 +9,16 @@
 pause_mode = 2
 script = ExtResource( 2 )
 
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.47451 )
+texture = ExtResource( 3 )
+
 [node name="Resume" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
 position = Vector2( 0, -50 )
 z_index = 1
 text = "Resume"
 fixed_width = 250
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
 
 [node name="Main Menu" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
