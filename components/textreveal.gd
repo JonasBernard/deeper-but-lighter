@@ -32,6 +32,8 @@ func _process(delta):
 	var additional = int(t)
 	t -= additional
 	revealed += additional
+	if additional >= 1:
+		BackgroundMusic.type_sound()
 	text = to_render.substr(0, revealed)
 	rect_position = -rect_size / 2 + Vector2(xpos, ypos)
 	if to_render.length() <= revealed:

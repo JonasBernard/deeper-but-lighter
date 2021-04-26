@@ -23,7 +23,7 @@ margin_left = -387.143
 margin_top = -225.51
 margin_right = 420.857
 margin_bottom = -193.51
-text = "As you can see, you have 10 lives. Pay attention on them."
+text = "As you can see, you have 10 lives. Pay attention to them."
 __meta__ = {
 "_edit_use_anchors_": false
 }

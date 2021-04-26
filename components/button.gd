@@ -5,7 +5,7 @@ export var text = "Hello, Button"
 export var fixed_width = -1
 signal on_click()
 var is_hovered = false
-
+var disabled = false
 
 
 #############
@@ -59,6 +59,9 @@ func _on_ButtonTest_input_event(viewport, event, shape_idx):
 	_set_pressed(true)
 	if not (event.button_index == BUTTON_LEFT):
 		return
+	if disabled:
+		return
+	BackgroundMusic.click_sound()
 	emit_signal("on_click")
 	
 func _set_all_textures(l, m, r):
@@ -77,6 +80,7 @@ func _set_pressed(press: bool):
 func _on_ButtonTest_mouse_entered():
 	if not is_hovered:
 		_set_all_textures(left_hover, middle_hover, right_hover)
+		BackgroundMusic.hover_sound()
 	is_hovered = true
 
 

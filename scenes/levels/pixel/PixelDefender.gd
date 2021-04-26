@@ -44,6 +44,7 @@ func _process(delta):
 		t -= bullet_timer
 		var b = _new_bullet(10, Bullet.ORDER)
 		b.position = $spaceship.position + Vector2(16, 0)
+		BackgroundMusic.bullet_sound()
 		for e in $Enemies.get_children():
 			b = _new_bullet(10, Bullet.CHAOS)
 			b.position = e.position - Vector2(16, 0)
