@@ -57,8 +57,6 @@ func _load_next_level():
 	_load_current_level()
 
 func _unload_current_level():
-	_path_renderer.path = null
-	_camera.path = null
 	_loaded_level = null
 	for c in _level_holder.get_children():
 		_delayed_delete(c)

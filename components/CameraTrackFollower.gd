@@ -1,12 +1,13 @@
 extends Camera2D
 class_name CameraTrackFollower
-var path : Path2D setget _path
+var path : Path2D setget set_path
 
 signal done()
 
 var _points
-func _path(value):
+func set_path(value):
 	path = value
+	current_speed = 0
 	if path == null:
 		_points = []
 		_pidx = -1
@@ -14,8 +15,6 @@ func _path(value):
 		_pidx = 0
 		_t = 0
 		_points = value.curve.get_baked_points()
-	current_speed = 0
-	_done_emitted = false
 	print("New path set to CameraTrackFollower")
 export var speedup = 100
 export var speedup_time = 5
@@ -31,6 +30,8 @@ func _process(delta):
 			emit_signal("done")
 			_done_emitted = true
 		return
+	else:
+		_done_emitted = false
 	var next_point = _points[_pidx]
 	var dist : Vector2 = next_point - position
 	if _t < speedup_time:

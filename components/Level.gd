@@ -6,7 +6,7 @@ signal level_finished()
 
 
 func start():
-	print("Level starting.")
+	print("Level ", name, " starting.")
 
 func lose_heart():
 	emit_signal("lost_heart")
