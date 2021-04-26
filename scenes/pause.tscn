@@ -12,6 +12,15 @@ script = ExtResource( 2 )
 visible = false
 position = Vector2( 640, 320 )
 
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+self_modulate = Color( 1, 1, 1, 0.356863 )
+margin_left = -1000.0
+margin_top = -1000.0
+margin_right = 1000.0
+margin_bottom = 1000.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
 [node name="Resume" parent="Node2D" instance=ExtResource( 1 )]
 pause_mode = 2
 position = Vector2( 0, -50 )
