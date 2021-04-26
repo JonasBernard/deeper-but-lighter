@@ -41,7 +41,6 @@ position = Vector2( 571.642, -311.599 )
 text = "Menu"
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource( 5 )]
-
 [connection signal="done" from="Camera2D" to="." method="_on_Camera2D_done"]
 [connection signal="on_click" from="Camera2D/MenuButton" to="." method="_on_MenuButton_on_click"]
 [connection signal="unpause" from="Camera2D/PauseMenu" to="." method="_on_PauseMenu_unpause"]

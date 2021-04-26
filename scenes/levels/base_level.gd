@@ -67,7 +67,7 @@ func _unload_current_level():
 	yield(get_tree(), "idle_frame") # todo animation here? post mortem
 
 func _delayed_delete(c):
-	yield(get_tree().create_timer(2.0), "timeout")
+	yield(get_tree().create_timer(10.0), "timeout")
 	c.queue_free()
 func _load_current_level():
 	if _loaded_level != null:
