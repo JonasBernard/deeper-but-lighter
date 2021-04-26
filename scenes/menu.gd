@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready():
 	_difficulty_text()
+	_fullscreen_text()
 
 
 func _on_Exit_on_click():
@@ -37,3 +38,14 @@ func _on_HardMode_on_click():
 func _on_SettingsButton_on_click():
 	$success_sound.play()
 	$Outgoing.play("tosettings")
+
+
+func _on_Fullscreen_on_click():
+	OS.set_window_fullscreen(!OS.window_fullscreen)
+	_fullscreen_text()
+	
+func _fullscreen_text():
+	if OS.window_fullscreen:
+		$Content/FullscreenLabel.text = "ON"
+	else:
+		$Content/FullscreenLabel.text = "OFF"

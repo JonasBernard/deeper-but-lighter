@@ -124,7 +124,7 @@ texture = ExtResource( 3 )
 [node name="Content" type="Node2D" parent="."]
 
 [node name="Back" parent="Content" instance=ExtResource( 2 )]
-position = Vector2( 400.655, 1310.32 )
+position = Vector2( 640, 1310.9 )
 text = "Back"
 fixed_width = 150
 
@@ -142,6 +142,32 @@ __meta__ = {
 position = Vector2( 400.655, 839.866 )
 text = ""
 fixed_width = 150
+
+[node name="Fullscreen" parent="Content" instance=ExtResource( 2 )]
+position = Vector2( 399.632, 962.107 )
+text = ""
+fixed_width = 150
+
+[node name="FullscreenLabel" type="Label" parent="Content"]
+margin_left = 305.624
+margin_top = 944.811
+margin_right = 494.624
+margin_bottom = 988.811
+text = "ON"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fullscreen2" type="Label" parent="Content"]
+margin_left = 89.0
+margin_top = 946.0
+margin_right = 282.0
+margin_bottom = 978.0
+text = "Fullscreen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CustomLabel" type="Label" parent="Content"]
 margin_left = 328.655
@@ -200,6 +226,7 @@ anims/tosettings = SubResource( 4 )
 stream = ExtResource( 9 )
 [connection signal="on_click" from="Content/Back" to="." method="_on_Back_on_click"]
 [connection signal="on_click" from="Content/HardMode" to="." method="_on_HardMode_on_click"]
+[connection signal="on_click" from="Content/Fullscreen" to="." method="_on_Fullscreen_on_click"]
 [connection signal="on_click" from="Content/Exit" to="." method="_on_Exit_on_click"]
 [connection signal="on_click" from="Content/Strart" to="." method="_on_Strart_on_click"]
 [connection signal="on_click" from="Content/SettingsButton" to="." method="_on_SettingsButton_on_click"]
