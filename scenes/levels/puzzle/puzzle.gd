@@ -7,9 +7,12 @@ const _button_comp = preload("res://components/button.tscn")
 const dim = 4
 
 var parts = []
-onready var order = range(dim*dim)
+onready var order = []
 
 func _ready():
+	for i in range(dim*dim-1):
+		order.append(i+1)
+	order.append(0)
 	for i in range(dim*dim-1):
 		var button = _button_comp.instance()
 		var label = Label.new()
@@ -32,7 +35,10 @@ func _position_from_index(idx):
 
 func _unhandled_input(event):
 	if running and event is InputEventKey and event.pressed and event.scancode == KEY_K:
-		order = range(dim*dim)
+		order = []
+		for i in range(dim*dim-1):
+			order.append(i+1)
+		order.append(0)
 		_render_state()
 		_check_state()
 		
@@ -51,9 +57,11 @@ func _render_state():
 		piece.position = _position_from_index(i) * 80
 
 func _check_state():
-	for i in range(dim*dim):
-		if order[i] != i:
+	for i in range(dim*dim-1):
+		if order[i] != i+1:
 			return
+	if order[dim*dim-1] != 0:
+		return
 	finish_level()
 
 
