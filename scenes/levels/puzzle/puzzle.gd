@@ -10,7 +10,6 @@ var parts = []
 onready var order = range(dim*dim)
 
 func _ready():
-	order.shuffle()
 	for i in range(dim*dim-1):
 		var button = _button_comp.instance()
 		var label = Label.new()
@@ -25,6 +24,7 @@ func _ready():
 		button.connect("on_click", self, "on_anybutton_click", [i+1])
 		parts.append(button)
 		$Pieces.add_child(button)
+	_initial_shuffle(100)
 	_render_state()
 
 func _position_from_index(idx):
@@ -33,6 +33,8 @@ func _position_from_index(idx):
 func on_anybutton_click(piece_name):
 	var pos = _button_position(piece_name)
 	_do_push(pos, _hole_position())
+	_render_state()
+	_check_state()
 
 func _render_state():
 	for i in range(dim*dim):
@@ -78,6 +80,21 @@ func _do_push(from, to):
 		order[i] = order[next_pos]
 		i = next_pos
 	order[from] = 0
-	_render_state()
-	_check_state()
-
+	
+func _initial_shuffle(it):
+	var hp = _hole_position()
+	for i in range(it):
+		var dir 
+		var p = _position_from_index(hp)
+		if randi() % 2 ==0:
+			var m = range(p.x+1, dim)
+			m.append_array(range(p.x))
+			m.shuffle()
+			dir = m[0] - p.x
+		else:
+			var m = range(p.y+1, dim)
+			m.append_array(range(p.y))
+			m.shuffle()
+			dir = (m[0]-p.y)* dim
+		_do_push(int(hp + dir), hp)
+		hp = int(hp+dir)
