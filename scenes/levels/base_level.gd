@@ -21,6 +21,9 @@ var _track : Path2D
 var _health = 10
 var first_level = true
 
+var smooth_radius = 500
+var intersteps = 10.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_health_bar.set_health(10)
@@ -30,17 +33,42 @@ func _get_next_level_pos() -> Vector2:
 	var dir = (randi() % 2) * 2 -1
 	return _last_camera_location + Vector2(1000, dir * (1024 + randi() % 1024))
 
+func _create_curve(curve, anchor: Vector2, radiusx: int, radiusy: int, radiusx2: int, radiusy2: int):
+	for i in range(0,intersteps):
+		var p1 = anchor + Vector2(radiusx, radiusy)
+		var p2 = anchor + Vector2(radiusx2, radiusy2)
+		var q0 = p1.linear_interpolate(anchor, i/intersteps)
+		var q1 = anchor.linear_interpolate(p2, i/intersteps)
+		var point = q0.linear_interpolate(q1, i/intersteps)
+		curve.add_point(point)
+	return curve
+
 func _create_path_from(from: Vector2, to: Vector2):
 	var path = Path2D.new()
 	var curve = Curve2D.new()
 	var diff = to - from
 	var extra_x = randf() * 400 + 100
 	var extra_y = (randf() * 400 + 100) * ((randi() % 2) * 2 - 1)
+	
 	curve.add_point(from)
-	curve.add_point(from + Vector2(diff.x + extra_x, 0))
-	curve.add_point(from + Vector2(diff.x + extra_x, extra_y))
-	curve.add_point(from + Vector2(diff.x, extra_y))
+	
+	smooth_radius = int(min(min(smooth_radius, abs(extra_y/2)), abs(extra_x/2)))
+	
+	var p2 = from + Vector2(diff.x + extra_x, 0)
+	var sgn = sign(extra_y)
+	curve = _create_curve(curve, p2, -smooth_radius, 0, 0, sgn * smooth_radius)
+	
+	var p3 = from + Vector2(diff.x + extra_x, extra_y)
+	sgn = sign(-extra_x)
+	var sgn2 = sign(-extra_y)
+	curve = _create_curve(curve, p3, 0, sgn2 * smooth_radius, sgn * smooth_radius, 0)
+	
+	var p4 = from + Vector2(diff.x, extra_y)
+	sgn = sign(diff.y)
+	curve = _create_curve(curve, p4, smooth_radius, 0, 0, sgn * smooth_radius)
+	
 	curve.add_point(to)
+	
 	path.curve = curve
 	return path
 
