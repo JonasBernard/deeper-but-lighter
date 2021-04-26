@@ -57,8 +57,17 @@ func _load_next_level():
 	_load_current_level()
 
 func _unload_current_level():
-	pass
+	_path_renderer.path = null
+	_camera.path = null
+	_loaded_level = null
+	for c in _level_holder.get_children():
+		_delayed_delete(c)
+	_track.queue_free()
+	yield(get_tree(), "idle_frame") # todo animation here? post mortem
 
+func _delayed_delete(c):
+	yield(get_tree().create_timer(2.0), "timeout")
+	c.queue_free()
 func _load_current_level():
 	if _loaded_level != null:
 		push_error("Tried to load level, while another level was already loaded.")
@@ -83,6 +92,7 @@ func _on_MenuButton_on_click():
 
 func _on_Camera2D_done():
 	print("Camera movement done")
+	_last_camera_location = $Camera2D.position
 	_loaded_level.start()
 
 func _disable_input(node):

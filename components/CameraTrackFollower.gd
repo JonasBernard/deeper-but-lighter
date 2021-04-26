@@ -7,9 +7,13 @@ signal done()
 var _points
 func _path(value):
 	path = value
-	_pidx = 0
-	_t = 0
-	_points = value.curve.get_baked_points()
+	if path == null:
+		_points = []
+		_pidx = -1
+	else:
+		_pidx = 0
+		_t = 0
+		_points = value.curve.get_baked_points()
 	current_speed = 0
 	_done_emitted = false
 	print("New path set to CameraTrackFollower")
