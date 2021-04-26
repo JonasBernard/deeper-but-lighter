@@ -5,7 +5,6 @@ onready var timer_label = $TimerLabel
 var sequence_index = 0
 
 var timer = 0
-var running = false
 
 func _total_time():
 	if Settings.difficulty == Settings.Difficulty.HARD:
@@ -14,7 +13,6 @@ func _total_time():
 
 func start():
 	.start()
-	running = true
 
 func _ready():
 	timer = 0

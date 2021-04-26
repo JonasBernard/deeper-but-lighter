@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://scenes/levels/pixel/bullet.gd"
+}, {
 "base": "Node2D",
 "class": "ButtonTest",
 "language": "GDScript",
@@ -40,6 +45,7 @@ _global_script_classes=[ {
 "path": "res://components/textreveal.gd"
 } ]
 _global_script_class_icons={
+"Bullet": "",
 "ButtonTest": "",
 "CameraTrackFollower": "",
 "Card": "",
