@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://components/Logo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://components/button.tscn" type="PackedScene" id=2]
@@ -49,6 +49,18 @@ tracks/2/keys = {
 "points": PoolRealArray( 1508.94, -0.25, 0, 0.25, 0, 850, -1.39, 12.618, 0.25, 0 ),
 "times": PoolRealArray( 0.8, 2 )
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Content/SettingsButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 640, 839.866 ), Vector2( 640, 839.866 ), Vector2( 640, 630 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "tointro"
@@ -84,6 +96,22 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1.7 )
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "tosettings"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Content:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -725.715 ) ]
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -93,6 +121,36 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )
 
 [node name="Content" type="Node2D" parent="."]
+
+[node name="Back" parent="Content" instance=ExtResource( 2 )]
+position = Vector2( 400.655, 1310.32 )
+text = "Back"
+fixed_width = 150
+
+[node name="DifficultyLabel" type="Label" parent="Content"]
+margin_left = 95.3517
+margin_top = 823.866
+margin_right = 135.352
+margin_bottom = 855.866
+text = "Difficulty: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HardMode" parent="Content" instance=ExtResource( 2 )]
+position = Vector2( 400.655, 839.866 )
+text = ""
+fixed_width = 150
+
+[node name="CustomLabel" type="Label" parent="Content"]
+margin_left = 328.655
+margin_top = 823.866
+margin_right = 473.655
+margin_bottom = 855.866
+text = "Hard Mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Badge" type="Node2D" parent="Content"]
 position = Vector2( 630.621, -217.796 )
@@ -125,14 +183,22 @@ position = Vector2( -150, 500 )
 text = "Start"
 fixed_width = 150
 
+[node name="SettingsButton" parent="Content" instance=ExtResource( 2 )]
+position = Vector2( 640, 630 )
+text = "Settings"
+
 [node name="Transitions" type="AnimationPlayer" parent="."]
 autoplay = "startgame"
 anims/startgame = SubResource( 2 )
 
 [node name="Outgoing" type="AnimationPlayer" parent="."]
 anims/tointro = SubResource( 3 )
+anims/tosettings = SubResource( 4 )
 
+[connection signal="on_click" from="Content/Back" to="." method="_on_Back_on_click"]
+[connection signal="on_click" from="Content/HardMode" to="." method="_on_HardMode_on_click"]
 [connection signal="on_click" from="Content/Exit" to="." method="_on_Exit_on_click"]
 [connection signal="on_click" from="Content/Strart" to="." method="_on_Strart_on_click"]
+[connection signal="on_click" from="Content/SettingsButton" to="." method="_on_SettingsButton_on_click"]
 [connection signal="animation_finished" from="Transitions" to="." method="_on_Transitions_animation_finished"]
 [connection signal="animation_finished" from="Outgoing" to="." method="_on_Outgoing_animation_finished"]
