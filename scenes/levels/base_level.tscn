@@ -13,7 +13,8 @@ script = ExtResource( 6 )
 
 [node name="PathRenderer" type="Node2D" parent="."]
 script = ExtResource( 2 )
-path_color = Color( 0, 0.741176, 1, 1 )
+path_color = Color( 0.54902, 0.682353, 0.760784, 1 )
+target_color = Color( 1, 0.360784, 0.639216, 1 )
 
 [node name="LevelHolder" type="Control" parent="."]
 __meta__ = {
