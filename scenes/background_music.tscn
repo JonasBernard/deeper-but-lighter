@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://sfx/sound_track_1.wav" type="AudioStream" id=1]
+[ext_resource path="res://scenes/background_music.gd" type="Script" id=2]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[node name="Parent" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Sound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -11.976
+volume_db = -13.867
 autoplay = true
+[connection signal="finished" from="Sound1" to="." method="_on_AudioStreamPlayer_finished"]

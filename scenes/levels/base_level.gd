@@ -8,6 +8,7 @@ onready var _health_bar = $Camera2D/healthbar
 onready var _last_camera_location : Vector2 = $Camera2D.position
 const _levels = [
 	preload("res://scenes/levels/hearts_introduce.tscn"),
+	preload("res://scenes/levels/typeracer_explain.tscn"),
 	preload("res://scenes/levels/typeracer.tscn"),
 	preload("res://scenes/levels/reactiontest.tscn"),
 	preload("res://scenes/levels/pixel/PixelDefender.tscn"),
@@ -71,7 +72,7 @@ func _unload_current_level():
 	yield(get_tree(), "idle_frame") # todo animation here? post mortem
 
 func _delayed_delete(c):
-	yield(get_tree().create_timer(10.0), "timeout")
+	yield(get_tree().create_timer(5.0), "timeout")
 	c.queue_free()
 func _load_current_level():
 	if _loaded_level != null:
