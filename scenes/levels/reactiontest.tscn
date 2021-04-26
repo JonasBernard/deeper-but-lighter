@@ -62,10 +62,10 @@ text = "9"
 fixed_width = 30
 
 [node name="TimerLabel" type="Label" parent="."]
-margin_left = -625.51
-margin_top = -296.265
-margin_right = -501.51
-margin_bottom = -215.265
+margin_left = -511.088
+margin_top = -285.67
+margin_right = -387.088
+margin_bottom = -204.67
 theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
