@@ -28,14 +28,18 @@ func _ready():
 
 func _get_next_level_pos() -> Vector2:
 	var dir = (randi() % 2) * 2 -1
-	return _last_camera_location + Vector2(1000, dir * (1000 + randi() % 1000))
+	return _last_camera_location + Vector2(1000, dir * (1024 + randi() % 1024))
 
 func _create_path_from(from: Vector2, to: Vector2):
 	var path = Path2D.new()
 	var curve = Curve2D.new()
-	var diff = to -from
+	var diff = to - from
+	var extra_x = randf() * 400 + 100
+	var extra_y = (randf() * 400 + 100) * ((randi() % 2) * 2 - 1)
 	curve.add_point(from)
-	curve.add_point(from + Vector2(diff.x, 0))
+	curve.add_point(from + Vector2(diff.x + extra_x, 0))
+	curve.add_point(from + Vector2(diff.x + extra_x, extra_y))
+	curve.add_point(from + Vector2(diff.x, extra_y))
 	curve.add_point(to)
 	path.curve = curve
 	return path
