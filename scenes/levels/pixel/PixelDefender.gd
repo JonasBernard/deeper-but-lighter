@@ -23,6 +23,8 @@ func _new_enemy():
 
 func start():
 	.start()
+	t = 0
+	$Enemies.get_children().clear()
 	var enemy_count = 5
 	if Settings.difficulty == Settings.Difficulty.HARD:
 		enemy_count += 3
