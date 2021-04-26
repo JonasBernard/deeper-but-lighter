@@ -7,6 +7,7 @@ onready var _path_renderer : PathRenderer = $PathRenderer
 onready var _health_bar = $Camera2D/healthbar
 onready var _last_camera_location : Vector2 = $Camera2D.position
 const _levels = [
+	preload("res://scenes/levels/typeracer_explain.tscn"),
 	preload("res://scenes/levels/typeracer.tscn"),
 	preload("res://scenes/levels/reactiontest.tscn")
 ]

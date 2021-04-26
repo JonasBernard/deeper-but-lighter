@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://components/textrevealbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/levels/typeracer_explain.gd" type="Script" id=2]
+[ext_resource path="res://textures/colors/light_blue.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 1.33484, 0 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 5.72205e-06, 0.667416 )
+scale = Vector2( 671.09, 199.891 )
+texture = ExtResource( 3 )
+
+[node name="TextrevealBox" parent="." instance=ExtResource( 1 )]
+text = "Now type the answer of the mail in time!"
+autostart = false
+speed = 8
+[connection signal="finished_reveal" from="TextrevealBox" to="." method="_on_TextrevealBox_finished_reveal"]
