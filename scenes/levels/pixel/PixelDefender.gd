@@ -63,9 +63,8 @@ func _on_enemy_area_shape_entered(area_id, area, area_shape, local_shape, e):
 		return
 	if area is Bullet:
 		area.queue_free()
-	elif area.team == Bullet.CHAOS:
-		return
-	e.queue_free()
+	elif area is Spaceship and area.team == Bullet.ORDER:
+		e.queue_free()
 
 func _on_spaceship_area_shape_entered(area_id, area, area_shape, local_shape):
 	if area is Bullet:
