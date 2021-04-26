@@ -14,3 +14,6 @@ func click_sound():
 
 func type_sound():
 	$Type.play()
+
+func lose_heart_sound():
+	$LoseHeart.play()

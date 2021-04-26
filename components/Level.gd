@@ -11,9 +11,11 @@ func start():
 	running = true
 
 func lose_heart():
+	BackgroundMusic.lose_heart_sound()
 	emit_signal("lost_heart", false)
 
 func lose_all_hearts():
+	BackgroundMusic.lose_heart_sound()
 	emit_signal("lost_heart", true)
 
 func finish_level():

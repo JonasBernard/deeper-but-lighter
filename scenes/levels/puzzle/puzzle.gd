@@ -30,6 +30,13 @@ func _ready():
 func _position_from_index(idx):
 	return Vector2(idx % dim, int(idx / dim))
 
+func _unhandled_input(event):
+	if running and event is InputEventKey and event.pressed and event.scancode == KEY_K:
+		order = range(dim*dim)
+		_render_state()
+		_check_state()
+		
+
 func on_anybutton_click(piece_name):
 	var pos = _button_position(piece_name)
 	_do_push(pos, _hole_position())

@@ -62,8 +62,10 @@ func _process(delta):
 func _on_enemy_area_shape_entered(area_id, area, area_shape, local_shape, e):
 	if area is Bullet and area.team == Bullet.CHAOS:
 		return
+	print(typeof(area), area)
 	if area is Bullet:
 		area.queue_free()
+		e.queue_free()
 	elif area is Spaceship and area.team == Bullet.ORDER:
 		e.queue_free()
 

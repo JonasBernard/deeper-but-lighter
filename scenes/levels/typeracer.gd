@@ -29,6 +29,7 @@ func eval():
 	if $Label.text.replace('\r\n', '\n').replace('\r', '\n') == $TextEdit.text.replace('\r\n', '\n').replace('\r', '\n'):
 		$TextEdit.readonly = true
 		$Button.disabled = true
+		$Incorrect.visible = false
 		finish_level()
 	else:
 		lose_heart()
@@ -40,6 +41,7 @@ func eval_corr():
 	if $Label.text.replace('\r\n', '\n').replace('\r', '\n') == $TextEdit.text.replace('\r\n', '\n').replace('\r', '\n'):
 		$TextEdit.readonly = true
 		$Button.disabled = true
+		$Incorrect.visible = false
 		finish_level()
 
 func _on_Button_on_click():

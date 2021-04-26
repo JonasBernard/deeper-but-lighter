@@ -14,6 +14,12 @@ func _on_Resume_on_click():
 	get_tree().paused = false
 	emit_signal("unpause")
 
+func _unhandled_input(event):
+	if event is InputEventKey and event.pressed and event.scancode == KEY_ESCAPE:
+		if pause_menu.visible:
+			_on_Resume_on_click()
+		else:
+			pause()
 
 func _on_Main_Menu_on_click():
 	get_tree().paused = false
