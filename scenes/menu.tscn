@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://components/Logo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://components/button.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://textures/texts/name.png" type="Texture" id=6]
 [ext_resource path="res://textures/icons/light_bulb.png" type="Texture" id=7]
 [ext_resource path="res://textures/icons/light_bulb_r.png" type="Texture" id=8]
+[ext_resource path="res://sfx/success.wav" type="AudioStream" id=9]
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 2
@@ -194,6 +195,10 @@ anims/startgame = SubResource( 2 )
 [node name="Outgoing" type="AnimationPlayer" parent="."]
 anims/tointro = SubResource( 3 )
 anims/tosettings = SubResource( 4 )
+
+[node name="success_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
 [connection signal="on_click" from="Content/Back" to="." method="_on_Back_on_click"]
 [connection signal="on_click" from="Content/HardMode" to="." method="_on_HardMode_on_click"]
 [connection signal="on_click" from="Content/Exit" to="." method="_on_Exit_on_click"]

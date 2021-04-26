@@ -20,6 +20,7 @@ func _on_Outgoing_animation_finished(anim_name):
 
 
 func _on_Back_on_click():
+	$success_sound.play(0.5)
 	$Outgoing.play_backwards("tosettings")
 
 func _difficulty_text():
@@ -34,4 +35,5 @@ func _on_HardMode_on_click():
 	Settings.save()
 
 func _on_SettingsButton_on_click():
+	$success_sound.play()
 	$Outgoing.play("tosettings")
