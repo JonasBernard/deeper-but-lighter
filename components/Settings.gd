@@ -9,6 +9,8 @@ var difficulty = Difficulty.EASY
 ##########
 # LOADER #
 ##########
+func _ready():
+	randomize()
 
 onready var _file = File.new()
 const _SETTINGS_PATH = "user://settings.json"
