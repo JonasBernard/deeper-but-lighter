@@ -47,8 +47,8 @@ func _on_Level_lost_heart(instakill):
 	if instakill:
 		_health = 0
 	_health -= 1
-	if _health == 0:
-		pass # TODO: lose scenario
+	if _health <= 0:
+		get_tree().change_scene("res://scenes/game_over.tscn")
 	_health_bar.set_health(_health)
 
 func _load_next_level():
