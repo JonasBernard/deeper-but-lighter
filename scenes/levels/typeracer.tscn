@@ -59,4 +59,5 @@ text = "The text you wrote is not exactely correct"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="on_click" from="Button" to="." method="_on_Button_on_click"]

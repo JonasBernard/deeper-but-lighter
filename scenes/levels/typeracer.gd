@@ -18,14 +18,15 @@ func _total_time():
 	return 20
 	
 func _process(delta):
-	if running:
-		timer += delta
+	if not running:
+		return
+	timer += delta
 	timer_label.text = str(total - timer)
 	if timer >= total:
 		eval()
 
 func eval():
-	if $Label.text == $TextEdit.text:
+	if $Label.text.replace('\r\n', '\n').replace('\r', '\n') == $TextEdit.text.replace('\r\n', '\n').replace('\r', '\n'):
 		finish_level()
 	else:
 		lose_heart()
