@@ -58,9 +58,9 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.8, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"transitions": PoolRealArray( 1, 1, 4.2871 ),
 "update": 0,
-"values": [ Vector2( 640, 839.866 ), Vector2( 640, 839.866 ), Vector2( 640, 630 ) ]
+"values": [ Vector2( 640, 839.866 ), Vector2( 640, 839.866 ), Vector2( 640, 680 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -124,35 +124,35 @@ texture = ExtResource( 3 )
 [node name="Content" type="Node2D" parent="."]
 
 [node name="Back" parent="Content" instance=ExtResource( 2 )]
-position = Vector2( 640, 1310.9 )
+position = Vector2( 640, 781.164 )
 text = "Back"
 fixed_width = 150
 
 [node name="DifficultyLabel" type="Label" parent="Content"]
-margin_left = 95.3517
-margin_top = 823.866
-margin_right = 135.352
-margin_bottom = 855.866
+margin_left = 442.855
+margin_top = 982.785
+margin_right = 620.855
+margin_bottom = 1014.79
 text = "Difficulty: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HardMode" parent="Content" instance=ExtResource( 2 )]
-position = Vector2( 400.655, 839.866 )
+position = Vector2( 748.159, 998.785 )
 text = ""
 fixed_width = 150
 
 [node name="Fullscreen" parent="Content" instance=ExtResource( 2 )]
-position = Vector2( 399.632, 962.107 )
+position = Vector2( 747.136, 1121.03 )
 text = ""
 fixed_width = 150
 
 [node name="FullscreenLabel" type="Label" parent="Content"]
-margin_left = 305.624
-margin_top = 944.811
-margin_right = 494.624
-margin_bottom = 988.811
+margin_left = 653.128
+margin_top = 1103.73
+margin_right = 842.128
+margin_bottom = 1147.73
 text = "ON"
 align = 1
 __meta__ = {
@@ -160,27 +160,27 @@ __meta__ = {
 }
 
 [node name="Fullscreen2" type="Label" parent="Content"]
-margin_left = 89.0
-margin_top = 946.0
-margin_right = 282.0
-margin_bottom = 978.0
+margin_left = 436.504
+margin_top = 1104.92
+margin_right = 629.504
+margin_bottom = 1136.92
 text = "Fullscreen"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CustomLabel" type="Label" parent="Content"]
-margin_left = 328.655
-margin_top = 823.866
-margin_right = 473.655
-margin_bottom = 855.866
+margin_left = 676.159
+margin_top = 982.785
+margin_right = 821.159
+margin_bottom = 1014.79
 text = "Hard Mode"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Badge" type="Node2D" parent="Content"]
-position = Vector2( 630.621, -217.796 )
+position = Vector2( 630.621, 247.313 )
 
 [node name="bluestripe" type="Sprite" parent="Content/Badge"]
 position = Vector2( -1.27783, -0.902592 )
@@ -201,17 +201,17 @@ scale = Vector2( 4, 4 )
 texture = SubResource( 1 )
 
 [node name="Exit" parent="Content" instance=ExtResource( 2 )]
-position = Vector2( 1508.94, 500 )
+position = Vector2( 850, 500 )
 text = "Exit"
 fixed_width = 150
 
 [node name="Strart" parent="Content" instance=ExtResource( 2 )]
-position = Vector2( -150, 500 )
+position = Vector2( 450, 500 )
 text = "Start"
 fixed_width = 150
 
 [node name="SettingsButton" parent="Content" instance=ExtResource( 2 )]
-position = Vector2( 640, 630 )
+position = Vector2( 640, 680 )
 text = "Settings"
 
 [node name="Transitions" type="AnimationPlayer" parent="."]
