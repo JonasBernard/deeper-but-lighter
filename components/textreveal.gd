@@ -29,12 +29,19 @@ func _process(delta):
 	if not started:
 		return
 	t += delta * speed
+	if t < 0:
+		return
 	var additional = int(t)
 	t -= additional
 	revealed += additional
 	if additional >= 1:
 		BackgroundMusic.type_sound()
 	text = to_render.substr(0, revealed)
+	if additional > 0:
+		if text.ends_with("\n"):
+			t = -10
+		elif text.ends_with(" "):
+			t = -2
 	rect_position = -rect_size / 2 + Vector2(xpos, ypos)
 	if to_render.length() <= revealed:
 		started = false
