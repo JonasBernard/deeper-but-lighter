@@ -218,6 +218,7 @@ anims/startgame = SubResource( 2 )
 [node name="Outgoing" type="AnimationPlayer" parent="."]
 anims/tointro = SubResource( 3 )
 anims/tosettings = SubResource( 4 )
+
 [connection signal="on_click" from="Content/Back" to="." method="_on_Back_on_click"]
 [connection signal="on_click" from="Content/HardMode" to="." method="_on_HardMode_on_click"]
 [connection signal="on_click" from="Content/Fullscreen" to="." method="_on_Fullscreen_on_click"]
