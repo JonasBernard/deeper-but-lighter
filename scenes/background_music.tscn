@@ -29,4 +29,5 @@ volume_db = -27.647
 [node name="Type" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -38.389
+
 [connection signal="finished" from="Sound1" to="." method="_on_AudioStreamPlayer_finished"]
