@@ -11,6 +11,7 @@ const _levels = [
 	preload("res://scenes/levels/typeracer.tscn"),
 	preload("res://scenes/levels/reactiontest.tscn"),
 	preload("res://scenes/levels/pixel/PixelDefender.tscn"),
+	preload("res://scenes/levels/puzzle/puzzle.tscn"),
 ]
 
 var _current_level = 0
