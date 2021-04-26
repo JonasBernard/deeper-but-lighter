@@ -42,7 +42,9 @@ func _add_hooks():
 func _on_Level_level_finished():
 	_load_next_level()
 
-func _on_Level_lost_heart():
+func _on_Level_lost_heart(instakill):
+	if instakill:
+		_health = 0
 	_health -= 1
 	if _health == 0:
 		pass # TODO: lose scenario

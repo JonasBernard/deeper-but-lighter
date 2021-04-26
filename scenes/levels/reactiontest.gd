@@ -28,6 +28,8 @@ func _process(delta):
 	if running:
 		timer += delta
 	timer_label.text = str(_total_time() - timer)
+	if timer >= _total_time():
+		lose_all_hearts()
 
 func _on_Any_button_click(btn_idx):
 	if btn_idx == sequence_index:
