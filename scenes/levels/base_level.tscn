@@ -15,7 +15,10 @@ script = ExtResource( 6 )
 script = ExtResource( 2 )
 path_color = Color( 0, 0.741176, 1, 1 )
 
-[node name="LevelHolder" type="Node2D" parent="."]
+[node name="LevelHolder" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 153.457, 427.259 )
@@ -38,6 +41,7 @@ position = Vector2( 571.642, -311.599 )
 text = "Menu"
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource( 5 )]
-visible = false
+
 [connection signal="done" from="Camera2D" to="." method="_on_Camera2D_done"]
 [connection signal="on_click" from="Camera2D/MenuButton" to="." method="_on_MenuButton_on_click"]
+[connection signal="unpause" from="Camera2D/PauseMenu" to="." method="_on_PauseMenu_unpause"]

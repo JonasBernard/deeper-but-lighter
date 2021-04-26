@@ -1,21 +1,18 @@
-extends Node2D
+extends CanvasLayer
 
-onready var pause_menu = $"."
-onready var backgroud = $Sprite
+onready var pause_menu = $Node2D
+
+signal unpause()
 
 func pause():
+	pause_mode = PAUSE_MODE_PROCESS # to be save
 	pause_menu.visible = true
-	pause_menu.pause_mode = PAUSE_MODE_PROCESS # to be save
 	get_tree().paused = true
-
-
-func _ready():
-	backgroud.modulate.a = 0.5
-
 
 func _on_Resume_on_click():
 	pause_menu.visible = false
 	get_tree().paused = false
+	emit_signal("unpause")
 
 
 func _on_Main_Menu_on_click():

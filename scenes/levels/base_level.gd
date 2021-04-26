@@ -77,9 +77,27 @@ func _load_current_level():
 	_camera.path = _track
 
 func _on_MenuButton_on_click():
+	_disable_input(_level_holder)
 	_pause_menu.pause()
 
 
 func _on_Camera2D_done():
 	print("Camera movement done")
 	_loaded_level.start()
+
+func _disable_input(node):
+	# this is barbaric
+	if node is Control:
+		node.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for n in node.get_children():
+		_disable_input(n)
+
+func _enable_input(node):
+	if node is Control:
+		node.mouse_filter = Control.MOUSE_FILTER_STOP
+	for n in node.get_children():
+		_enable_input(n)
+
+func _on_PauseMenu_unpause():
+	_enable_input(_level_holder)
+	_level_holder.set_process_input(true)
