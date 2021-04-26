@@ -4,7 +4,6 @@ onready var timer_label = $TimeLabel
 
 var timer = 0
 var total = 0
-var running = false
 
 func start():
 	.start()
