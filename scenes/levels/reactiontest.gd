@@ -8,8 +8,8 @@ var timer = 0
 
 func _total_time():
 	if Settings.difficulty == Settings.Difficulty.HARD:
-		return 6
-	return 10
+		return 4
+	return 6
 
 func start():
 	.start()

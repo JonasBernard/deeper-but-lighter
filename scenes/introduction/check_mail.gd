@@ -15,13 +15,13 @@ func check_pw():
 	if passwordfield.text == correct:
 		login()
 	else:
-		if passwordfield.text == "deeper" or trys == 10:
+		if passwordfield.text == "deeper" or trys == 5:
 			$Monolog2.start()
 			$Monolog1.visible = false
-		if trys == 20:
+		if trys == 10:
 			$Monolog3.start()
 			$Monolog2.visible = false
-		if trys == 30:
+		if trys == 15:
 			$Reset.visible = true
 			correct = "tom"
 		trys = trys + 1

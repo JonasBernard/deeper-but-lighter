@@ -14,18 +14,16 @@ frame_1/delay_sec = 0.0
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
-position = Vector2( -337.617, -202.397 )
+position = Vector2( -445.373, -231.581 )
 scale = Vector2( 3.095, 3.095 )
 texture = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-visible = false
-margin_left = -279.387
-margin_top = -196.326
-margin_right = 188.613
-margin_bottom = -164.326
-text = "As you can see, you have 10 lives"
+margin_left = -387.143
+margin_top = -225.51
+margin_right = 420.857
+margin_bottom = -193.51
+text = "As you can see, you have 10 lives. Pay attention on them."
 __meta__ = {
 "_edit_use_anchors_": false
 }
