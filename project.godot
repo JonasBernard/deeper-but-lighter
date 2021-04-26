@@ -64,6 +64,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Settings="*res://components/Settings.gd"
+BackgroundMusic="*res://scenes/background_music.tscn"
 
 [display]
 
