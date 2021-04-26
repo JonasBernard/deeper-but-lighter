@@ -24,7 +24,7 @@ func _ready():
 
 func _get_next_level_pos() -> Vector2:
 	var dir = (randi() % 2) * 2 -1
-	return _last_camera_location + Vector2(500, dir * (500 + randi() % 500))
+	return _last_camera_location + Vector2(1000, dir * (1000 + randi() % 1000))
 
 func _create_path_from(from: Vector2, to: Vector2):
 	var path = Path2D.new()
