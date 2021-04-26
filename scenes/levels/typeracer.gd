@@ -15,7 +15,7 @@ func start():
 func _total_time():
 	if Settings.difficulty == Settings.Difficulty.HARD:
 		return 10
-	return 20
+	return 60
 	
 func _process(delta):
 	if not running:
@@ -27,6 +27,7 @@ func _process(delta):
 
 func eval():
 	if $Label.text.replace('\r\n', '\n').replace('\r', '\n') == $TextEdit.text.replace('\r\n', '\n').replace('\r', '\n'):
+		$TextEdit.readonly = true
 		finish_level()
 	else:
 		lose_heart()
@@ -34,5 +35,14 @@ func eval():
 		$TextEdit.text = ""
 		$Incorrect.visible = true
 
+func eval_corr():
+	if $Label.text.replace('\r\n', '\n').replace('\r', '\n') == $TextEdit.text.replace('\r\n', '\n').replace('\r', '\n'):
+		$TextEdit.readonly = true
+		finish_level()
+
 func _on_Button_on_click():
 	eval()
+
+
+func _on_TextEdit_text_changed():
+	eval_corr()

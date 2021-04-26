@@ -25,9 +25,9 @@ func start():
 	.start()
 	t = 0
 	$Enemies.get_children().clear()
-	var enemy_count = 5
+	var enemy_count = 6
 	if Settings.difficulty == Settings.Difficulty.HARD:
-		enemy_count += 3
+		enemy_count += 7
 	for i in range(5):
 		_new_enemy()
 

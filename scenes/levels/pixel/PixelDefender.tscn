@@ -13,5 +13,4 @@ script = ExtResource( 1 )
 position = Vector2( -432.818, -39.5735 )
 
 [node name="Enemies" type="Node2D" parent="."]
-
 [connection signal="area_shape_entered" from="spaceship" to="." method="_on_spaceship_area_shape_entered"]

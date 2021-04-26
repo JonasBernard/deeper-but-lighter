@@ -9,12 +9,12 @@ position = Vector2( 1.33484, 0 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 5.72205e-06, 0.667416 )
-scale = Vector2( 671.09, 199.891 )
+position = Vector2( 0.667454, 0.667416 )
+scale = Vector2( 805.909, 199.891 )
 texture = ExtResource( 3 )
 
 [node name="TextrevealBox" parent="." instance=ExtResource( 1 )]
-text = "Now type the answer of the mail in time!"
+text = "Now type the answer to the mail in time!"
 autostart = false
 speed = 8
 [connection signal="finished_reveal" from="TextrevealBox" to="." method="_on_TextrevealBox_finished_reveal"]
