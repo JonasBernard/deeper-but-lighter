@@ -69,7 +69,6 @@ func _do_push(from, to):
 	if not (same_row or same_col):
 		print("Invalid move")
 		return
-	print("Performing push from ", from, " to ", to, " in direction ", dir)
 	var i = to
 	while i != from:
 		var next_pos

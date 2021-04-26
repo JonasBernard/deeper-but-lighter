@@ -12,7 +12,7 @@ func login():
 	get_tree().change_scene("res://scenes/introduction/mail.tscn")
 
 func check_pw():
-	if passwordfield.text == correct:
+	if passwordfield.text == correct or Settings.difficulty == Settings.Difficulty.PEACEFUL:
 		login()
 	else:
 		if passwordfield.text == "deeper" or trys == 5:

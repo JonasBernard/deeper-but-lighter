@@ -107,6 +107,7 @@ text = "Too many trys. Password was reset to \"tom\""
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="text_changed" from="password" to="." method="_on_password_text_changed"]
 [connection signal="text_entered" from="password" to="." method="_on_password_text_entered"]
 [connection signal="on_click" from="Log in" to="." method="_on_Log_in_on_click"]

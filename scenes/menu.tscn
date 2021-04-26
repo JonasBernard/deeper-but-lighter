@@ -140,12 +140,10 @@ __meta__ = {
 
 [node name="HardMode" parent="Content" instance=ExtResource( 2 )]
 position = Vector2( 748.159, 998.785 )
-text = ""
 fixed_width = 150
 
 [node name="Fullscreen" parent="Content" instance=ExtResource( 2 )]
 position = Vector2( 747.136, 1121.03 )
-text = ""
 fixed_width = 150
 
 [node name="FullscreenLabel" type="Label" parent="Content"]
@@ -224,6 +222,7 @@ anims/tosettings = SubResource( 4 )
 
 [node name="success_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+
 [connection signal="on_click" from="Content/Back" to="." method="_on_Back_on_click"]
 [connection signal="on_click" from="Content/HardMode" to="." method="_on_HardMode_on_click"]
 [connection signal="on_click" from="Content/Fullscreen" to="." method="_on_Fullscreen_on_click"]

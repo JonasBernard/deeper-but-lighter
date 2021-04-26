@@ -1,6 +1,6 @@
 extends Node
 
-enum Difficulty {EASY, HARD}
+enum Difficulty {PEACEFUL, EASY, HARD}
 
 var sound_level : int = 100
 var difficulty = Difficulty.EASY

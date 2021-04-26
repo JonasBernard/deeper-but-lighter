@@ -27,11 +27,18 @@ func _on_Back_on_click():
 func _difficulty_text():
 	if Settings.difficulty == Settings.Difficulty.HARD:
 		$Content/CustomLabel.text = "Hard"
+	elif Settings.difficulty == Settings.Difficulty.PEACEFUL:
+		$Content/CustomLabel.text = "Peaceful"
 	else:
 		$Content/CustomLabel.text = "Easy"
 
 func _on_HardMode_on_click():
-	Settings.difficulty = 1 - Settings.difficulty
+	if Settings.difficulty == Settings.Difficulty.EASY:
+		Settings.difficulty = Settings.Difficulty.HARD
+	elif Settings.difficulty == Settings.Difficulty.HARD:
+		Settings.difficulty = Settings.Difficulty.PEACEFUL
+	else:
+		Settings.difficulty = Settings.Difficulty.EASY
 	_difficulty_text()
 	Settings.save()
 
