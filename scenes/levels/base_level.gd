@@ -18,6 +18,7 @@ var _current_level = 0
 var _loaded_level : Level
 var _track : Path2D
 var _health = 10
+var first_level = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -65,7 +66,8 @@ func _unload_current_level():
 	_loaded_level = null
 	for c in _level_holder.get_children():
 		_delayed_delete(c)
-	_track.queue_free()
+	if _track:
+		_track.queue_free()
 	yield(get_tree(), "idle_frame") # todo animation here? post mortem
 
 func _delayed_delete(c):
@@ -82,11 +84,17 @@ func _load_current_level():
 	_add_hooks()
 	_level_holder.add_child(_loaded_level)
 	print("Level loaded")
-	_track = _create_path_from(_last_camera_location, pos)
-	add_child(_track)
-	print("Tracks loaded")
-	_path_renderer.path = _track
-	_camera.path = _track
+	if not first_level:
+		_track = _create_path_from(_last_camera_location, pos)
+		add_child(_track)
+		print("Tracks loaded")
+		_path_renderer.path = _track
+		_camera.path = _track
+	else:
+		first_level = false
+		_camera.path = null
+		_camera.position = pos
+		_on_Camera2D_done()
 
 func _on_MenuButton_on_click():
 	_disable_input(_level_holder)
@@ -95,7 +103,7 @@ func _on_MenuButton_on_click():
 
 func _on_Camera2D_done():
 	print("Camera movement done")
-	_last_camera_location = $Camera2D.position
+	_last_camera_location = _camera.position
 	_loaded_level.start()
 
 func _disable_input(node):
