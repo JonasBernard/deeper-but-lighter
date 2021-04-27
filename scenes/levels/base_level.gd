@@ -115,8 +115,9 @@ func _unload_current_level():
 	yield(get_tree(), "idle_frame") # todo animation here? post mortem
 
 func _delayed_delete(c):
-	yield(get_tree().create_timer(5.0), "timeout")
-	c.queue_free()
+	yield(get_tree().create_timer(20.0), "timeout")
+	if c:
+		c.queue_free()
 func _load_current_level():
 	if _loaded_level != null:
 		push_error("Tried to load level, while another level was already loaded.")
