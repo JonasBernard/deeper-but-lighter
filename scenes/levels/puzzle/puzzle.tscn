@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/levels/puzzle/puzzle.gd" type="Script" id=1]
+[ext_resource path="res://textures/paper.png" type="Texture" id=2]
 
 [node name="Node2D2" type="Node2D"]
 position = Vector2( 533.969, 239.439 )
 script = ExtResource( 1 )
 
 [node name="Pieces" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -203.09, 8.55249 )
+scale = Vector2( 0.363041, 0.363041 )
+texture = ExtResource( 2 )
