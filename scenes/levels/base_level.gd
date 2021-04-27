@@ -83,9 +83,10 @@ func _on_Level_lost_heart(instakill):
 	if instakill:
 		_health = 0
 	_health -= 1
-	_health = 10
+	if Settings.difficulty == Settings.Difficulty.PEACEFUL:
+		_health = 10
 	_health_bar.set_health(_health)
-	if instakill:
+	if instakill and Settings.difficulty == Settings.Difficulty.PEACEFUL:
 		_load_next_level()
 	if _health <= 0:
 		get_tree().change_scene("res://scenes/game_over.tscn")
