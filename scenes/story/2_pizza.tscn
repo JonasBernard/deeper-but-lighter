@@ -11,9 +11,10 @@ script = ExtResource( 3 )
 texture = ExtResource( 1 )
 
 [node name="TextrevealBox" parent="." instance=ExtResource( 2 )]
-text = "The pizza was delicious, as was to be expected, and talking
-to the server yielded quite a lot of interesting information:
+text = "The pizza was delicious, as was to be expected.
+
+Talkingto the server yielded quite a lot of interesting information:
 Marcus WAS in fact being pressured into selling off his place.
-At least for once my inhuman intuition was right! I sure hope
-I don't get ambushed on my way home."
+At least for once my inhuman intuition was right! Armed with 
+this information, I sure hope I don't get ambushed on my way home."
 autostart = false

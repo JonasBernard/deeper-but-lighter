@@ -12,9 +12,9 @@ texture = ExtResource( 1 )
 
 [node name="TextrevealBox" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2.65454, 2.2403 )
-text = "I met Matt at Washington Bridge and all the while
-we walked to Marcus' Pizza Palace, i couldn't help, but
+text = "I met Matt at Washington Bridge. All the while
+we walked to Marcus' Pizza Palace, i couldn't help but
 feel as if we were being followed. I sure hope that THEY
-didn't find me again. I might as well enjoy my meal while
-I'm here."
+didn't find me again, but while I'm here I might as well 
+enjoy my meal."
 autostart = false
