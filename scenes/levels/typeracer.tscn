@@ -48,10 +48,10 @@ __meta__ = {
 }
 
 [node name="TimeLabel" type="Label" parent="."]
-margin_left = -463.0
-margin_top = -255.0
-margin_right = -291.0
-margin_bottom = -209.0
+margin_left = -397.897
+margin_top = -237.041
+margin_right = -225.897
+margin_bottom = -191.041
 __meta__ = {
 "_edit_use_anchors_": false
 }

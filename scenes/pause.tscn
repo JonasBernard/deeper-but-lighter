@@ -47,6 +47,5 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="on_click" from="Node2D/Resume" to="." method="_on_Resume_on_click"]
 [connection signal="on_click" from="Node2D/Main Menu" to="." method="_on_Main_Menu_on_click"]

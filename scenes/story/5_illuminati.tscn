@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://textures/backgrounds/background_blue.png" type="Texture" id=1]
+[ext_resource path="res://components/textrevealbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/story/story.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="TextrevealBox" parent="." instance=ExtResource( 2 )]
+text = "On my way out I spot a guard wearing an Illuminati Badge
+around their arm. This can only mean one thing! The Illuminati
+are behind this plot to close Marcus' Pizza Place! I should've
+known only those cheese-haters would be capable of such
+CRUELTY! Now, if i act quick, i might be able to disarm the guard,
+before they are able to ring alarm."
+autostart = false

@@ -5,6 +5,8 @@ onready var timer_label = $TimeLabel
 var timer = 0
 var total = 0
 
+var started = false
+
 func start():
 	.start()
 	total = _total_time()
@@ -20,13 +22,15 @@ func _total_time():
 func _process(delta):
 	if not running:
 		return
+	if not started:
+		return
 	timer += delta
 	timer_label.text = str(total - timer)
 	if timer >= total:
 		eval()
 
 func eval():
-	if $Label.text.replace('\r\n', '\n').replace('\r', '\n') == $TextEdit.text.replace('\r\n', '\n').replace('\r', '\n'):
+	if $Label.text.replace('\r\n', '').replace('\r', '').replace(' ', '') == $TextEdit.text.replace('\r\n', '').replace('\r', '').replace(' ', ''):
 		$TextEdit.readonly = true
 		$Button.disabled = true
 		$Incorrect.visible = false
@@ -49,4 +53,6 @@ func _on_Button_on_click():
 
 
 func _on_TextEdit_text_changed():
+	if not started:
+		started = true
 	eval_corr()
