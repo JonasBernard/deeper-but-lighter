@@ -40,8 +40,8 @@ func _process(delta):
 	if additional > 0:
 		if text.ends_with("\n"):
 			t = -7
-		elif text.ends_with(" "):
-			t = -1
+		if text.ends_with(" "):
+			t += 1
 	rect_position = -rect_size / 2 + Vector2(xpos, ypos)
 	if to_render.length() <= revealed:
 		started = false

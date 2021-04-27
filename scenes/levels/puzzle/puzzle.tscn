@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/levels/puzzle/puzzle.gd" type="Script" id=1]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2( 533.969, 239.439 )
 script = ExtResource( 1 )
 
