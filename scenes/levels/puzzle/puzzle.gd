@@ -27,7 +27,7 @@ func _ready():
 		button.connect("on_click", self, "on_anybutton_click", [i+1])
 		parts.append(button)
 		$Pieces.add_child(button)
-	_initial_shuffle(100)
+	_initial_shuffle(0)
 	_render_state()
 
 func _position_from_index(idx):

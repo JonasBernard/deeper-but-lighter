@@ -30,7 +30,7 @@ func _process(delta):
 		eval()
 
 func eval():
-	if $Label.text.replace('\r\n', '').replace('\r', '').replace(' ', '') == $TextEdit.text.replace('\r\n', '').replace('\r', '').replace(' ', ''):
+	if $Label.text.replace('\n', '').replace('\r\n', '').replace('\r', '').replace(' ', '') == $TextEdit.text.replace('\n', '').replace('\r\n', '').replace('\r', '').replace(' ', ''):
 		$TextEdit.readonly = true
 		$Button.disabled = true
 		$Incorrect.visible = false
@@ -40,9 +40,10 @@ func eval():
 		timer = 0
 		$TextEdit.text = ""
 		$Incorrect.visible = true
+		started = false
 
 func eval_corr():
-	if $Label.text.replace('\r\n', '\n').replace('\r', '\n') == $TextEdit.text.replace('\r\n', '\n').replace('\r', '\n'):
+	if $Label.text.replace('\n', '').replace('\r\n', '').replace('\r', '').replace(' ', '') == $TextEdit.text.replace('\n', '').replace('\r\n', '').replace('\r', '').replace(' ', ''):
 		$TextEdit.readonly = true
 		$Button.disabled = true
 		$Incorrect.visible = false
