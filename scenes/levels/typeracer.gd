@@ -17,7 +17,7 @@ func start():
 func _total_time():
 	if Settings.difficulty == Settings.Difficulty.HARD:
 		return 30
-	return 60
+	return 120
 	
 func _process(delta):
 	if not running:
